@@ -1,0 +1,4 @@
+Nike React§https://www.vinted.fr/catalog?search_text=nike%20react%20live&color_ids[]=12&size_id[]=782&currency=EUR&search_id=9192460872&order=newest_first
+Nike Sweat§https://www.vinted.fr/catalog?search_text=nike%20react%20live&color_ids[]=12&size_id[]=782&currency=EUR&search_id=9192460872&order=newest_first
+Nike T-shirt§https://www.vinted.fr/catalog?search_text=nike%20react%20live&color_ids[]=12&size_id[]=782&currency=EUR&search_id=9192460872&order=newest_first
+Nike Short§https://www.vinted.fr/catalog?search_text=nike%20react%20live&color_ids[]=12&size_id[]=782&currency=EUR&search_id=9192460872&order=newest_first
