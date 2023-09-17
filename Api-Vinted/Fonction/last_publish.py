@@ -38,7 +38,7 @@ def last_publish(url,time_wait_charging_page:int=15):
 
         # Recuperation de plusieure info sur l'annonce d'on Name PriceHTT Marque Taille
         Links_description = bot.find_element(By.XPATH ,'//div[@class="feed-grid__item-content"]')
-        print(Links_description)
+        print(Links_description.text)
 
         list_Name_PriceHTT_Marque_Taille = Links_description.text
 

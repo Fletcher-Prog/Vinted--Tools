@@ -3,12 +3,14 @@
 
 import Fonction as myfonction
 from flask import Flask, render_template, request, g, current_app
+import json
 
 
 #Links_and_name = myfonction.tri("Links.txt","§")
 
 
 #print(Links_and_name)
+
 
 
 
@@ -30,5 +32,5 @@ def Vinted_last_publish():
     #Argument en praramétre
     link=request.args.get("link")
     link = str(request.query_string).replace("b'","")
-    result = str(myfonction.last_publish(str(link)))
-    return result
+    result = myfonction.last_publish(str(link))
+    return json.dumps(result)

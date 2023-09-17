@@ -1,0 +1,11 @@
+{
+  "name": "brouillon",
+  "version": "1.0.0",
+  "description": "Project has goal to teste code",
+  "main": "main.js",
+  "scripts": {
+    "test": "node ."
+  },
+  "author": "Fletcher",
+  "license": "ISC"
+}
