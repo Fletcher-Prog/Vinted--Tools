@@ -1,9 +1,25 @@
-# Permet de télecharer une image a partir d'un lien
-#response = requests.get(<lien de l'image>)
-#name_img = 'image.jpg'
-#with open(name_img, "wb") as f:
-#    f.write(response.content)
+import discord
 
-APPLICATION ID : 1151890848385085523
+intents = discord.Intents.default()
+intents.message_content = True
 
-PUBLIC KEY : b5fc16d713f1ae8ae79f3c913ff32d5c6939171f5fd45183364d3bfbe4adaf44
+client = discord.Client(intents=intents)
+
+@client.event
+async def on_ready():
+    print(f'We have logged in as {client.user}')
+
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+
+    if message.content.startswith('!addlink'):
+        channel = discord.MessageReference.channel_id
+        print(channel)
+        await message.channel.send('Hello!')
+
+client.run('MTE1MTg5MDg0ODM4NTA4NTUyMw.G1CWu5.ehGimOTqhjIZ_h1bGjkMhwuC7fOdTX7WIu_mmY')
+
+
+

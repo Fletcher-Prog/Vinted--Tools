@@ -33,4 +33,4 @@ def Vinted_last_publish():
     link=request.args.get("link")
     link = str(request.query_string).replace("b'","")
     result = myfonction.last_publish(str(link))
-    return json.dumps(result)
+    return result

@@ -7,6 +7,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import requests
+import json
 
 
 def last_publish(url,time_wait_charging_page:int=15):
@@ -38,7 +39,9 @@ def last_publish(url,time_wait_charging_page:int=15):
 
         # Recuperation de plusieure info sur l'annonce d'on Name PriceHTT Marque Taille
         Links_description = bot.find_element(By.XPATH ,'//div[@class="feed-grid__item-content"]')
-        print(Links_description.text)
+        
+        # Afficher les infos recupére
+        #print(Links_description.text)
 
         list_Name_PriceHTT_Marque_Taille = Links_description.text
 
@@ -58,10 +61,27 @@ def last_publish(url,time_wait_charging_page:int=15):
         # Recupe prix tout taxe
         price_TTC = bot.find_element(By.XPATH , "//h4[@class='web_ui__Text__text web_ui__Text__caption web_ui__Text__left web_ui__Text__primary']" ).text
 
-        # Downolad Img
-        #Img =  bot.find_element(By.XPATH , "//div[@class='web_ui__Image__image web_ui__Image__cover web_ui__Image__portrait web_ui__Image__scaled web_ui__Image__ratio']/img[@class='web_ui__Image__content']" ).get_attribute("src")
+        # Créatoin d'un obke json pour avoir un retun propre
+        dataOut = '{"name":"" , "marque":"" , "taille":"" , "priceHTT":"" , "priceTTC":"" , "linkImg":""}'
+        dataOut = json.loads(dataOut)
+
+        # Recuper le lien de l'image
         Img =  bot.find_element(By.XPATH , "//div[@class='web_ui__Image__image web_ui__Image__cover web_ui__Image__portrait web_ui__Image__scaled web_ui__Image__ratio']/img[@class='web_ui__Image__content']" ).get_attribute("src")
 
+        
+        # Mise a jours de l'objet json pour avoir les données recupére 
+        dataOut["name"] = name
+        dataOut["marque"] = marque
+        dataOut["taille"] = taille
+        dataOut["priceHTT"] = priceHTT
+        dataOut["priceTTC"] = price_TTC
+        dataOut["linkImg"] = Img
+
+        print(dataOut)
+
+        # Downolad Img
+        #Img =  bot.find_element(By.XPATH , "//div[@class='web_ui__Image__image web_ui__Image__cover web_ui__Image__portrait web_ui__Image__scaled web_ui__Image__ratio']/img[@class='web_ui__Image__content']" ).get_attribute("src")
+        
         bot.get(Img)
 
-        return name , marque , taille, priceHTT , price_TTC , Img
+        return dataOut
