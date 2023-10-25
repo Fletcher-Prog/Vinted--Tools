@@ -78,7 +78,7 @@ def last_publish(url,time_wait_charging_page:int=15):
         dataOut["priceTTC"] = price_TTC
         dataOut["linkImg"] = Img
 
-        print(dataOut)
+        #print(dataOut)
 
         # Downolad Img
         #Img =  bot.find_element(By.XPATH , "//div[@class='web_ui__Image__image web_ui__Image__cover web_ui__Image__portrait web_ui__Image__scaled web_ui__Image__ratio']/img[@class='web_ui__Image__content']" ).get_attribute("src")
