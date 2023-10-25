@@ -1,5 +1,5 @@
 
-# For Launch :FLASK_APP=Main.py flask run
+# For Launch mode debug : FLASK_APP=Main.py flask run
 
 import Fonction as myfonction
 from flask import Flask, render_template, request, g, current_app
@@ -21,16 +21,22 @@ import json
 
 app = Flask(__name__)
 
-app.route('/')
-def route():
+@app.route('/')
+def index():
     return 'L\'api marche'
 
 
-@app.route("/vinted")
+@app.route('/vinted')
 def Vinted_last_publish():
 
     #Argument en praramétre
     link=request.args.get("link")
     link = str(request.query_string).replace("b'","")
     result = myfonction.last_publish(str(link))
+    print(link)
     return result
+
+
+
+if __name__ == '__main__':
+    app.run(host='10.245.23.238', port=5000)

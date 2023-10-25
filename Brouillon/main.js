@@ -9,3 +9,15 @@ async function main() {
 }
 
 main();
+
+
+
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+
+    if message.content.startswith('!addlink'):
+        channel = discord.utils.get(client.channels, name=message.channel) 
+        print((channel))
+        await channel.send('Hello!') 
