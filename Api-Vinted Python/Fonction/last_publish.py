@@ -39,36 +39,46 @@ def last_publish(url,time_wait_charging_page:int=15):
         time.sleep(time_wait_charging_page)
 
         # Recuperation de plusieure info sur l'annonce d'on Name PriceHTT Marque Taille
-        Links_description = bot.find_element(By.XPATH ,'//div[@class="feed-grid__item-content"]')
-        
-        # Afficher les infos recupére
-        #print(Links_description.text)
+        try:        
+                # Afficher les infos recupére
+                #print(Links_description.text)
+                Links_description = bot.find_element(By.XPATH ,'//div[@class="feed-grid__item-content"]')        
 
-        list_Name_PriceHTT_Marque_Taille = Links_description.text
+                list_Name_PriceHTT_Marque_Taille = Links_description.text
 
-        list_Name_PriceHTT_Marque_Taille = list_Name_PriceHTT_Marque_Taille.split("\n")
+                list_Name_PriceHTT_Marque_Taille = list_Name_PriceHTT_Marque_Taille.split("\n")
 
-        name = list_Name_PriceHTT_Marque_Taille[0].split(",")
-        name = name[0]
+                name = list_Name_PriceHTT_Marque_Taille[0].split(",")
+                name = name[0]
 
-        priceHTT = list_Name_PriceHTT_Marque_Taille[1].replace(", marque" , " ")
+                priceHTT = list_Name_PriceHTT_Marque_Taille[1].replace(", marque" , " ")
 
-        marque = list_Name_PriceHTT_Marque_Taille[5].split(",")
-        marque = marque[0]
+                marque = list_Name_PriceHTT_Marque_Taille[5].split(",")
+                marque = marque[0]
 
-        taille = list_Name_PriceHTT_Marque_Taille[4]
-
+                taille = list_Name_PriceHTT_Marque_Taille[4]
+        except:
+                list_Name_PriceHTT_Marque_Taille = name = priceHTT = marque =taille = " Erreure bloc de récpération de l'annonce "
 
         # Recupe prix tout taxe
-        price_TTC = bot.find_element(By.XPATH , "//h4[@class='web_ui__Text__text web_ui__Text__caption web_ui__Text__left web_ui__Text__primary']" ).text
+        try:
+                price_TTC = bot.find_element(By.XPATH , "//h4[@class='web_ui__Text__text web_ui__Text__caption web_ui__Text__left web_ui__Text__primary']" ).text
+        except:
+               price_TTC = "Erreur lors de la récupération du prix" 
 
-        # Créatoin d'un obke json pour avoir un retun propre
-        dataOut = '{"name":"" , "marque":"" , "taille":"" , "priceHTT":"" , "priceTTC":"" , "linkImg":""}'
-        dataOut = json.loads(dataOut)
+        # Récupération du lien de l'annonce
+        try :
+                idProduit = bot.find_element(By.XPATH , ' //a[@class="new-item-box__overlay new-item-box__overlay--clickable"]')
+                idProduit = idProduit.get_attribute("href")
+        except:
+                idProduit = "Erreur lors de la récupération du prix" 
 
         # Recuper le lien de l'image
         Img =  bot.find_element(By.XPATH , "//div[@class='web_ui__Image__image web_ui__Image__cover web_ui__Image__portrait web_ui__Image__scaled web_ui__Image__ratio']/img[@class='web_ui__Image__content']" ).get_attribute("src")
 
+        # Créatoin d'un obke json pour avoir un retun propre
+        dataOut = '{"name": "" , "marque": "" , "taille": "" , "priceHTT": "" , "priceTTC": "" , "linkImg": "" , "idProduit" : ""}'
+        dataOut = json.loads(dataOut)
         
         # Mise a jours de l'objet json pour avoir les données recupére 
         dataOut["name"] = name
@@ -77,6 +87,7 @@ def last_publish(url,time_wait_charging_page:int=15):
         dataOut["priceHTT"] = priceHTT
         dataOut["priceTTC"] = price_TTC
         dataOut["linkImg"] = Img
+        dataOut["idProduit"] = idProduit
 
         #print(dataOut)
 
@@ -84,5 +95,7 @@ def last_publish(url,time_wait_charging_page:int=15):
         #Img =  bot.find_element(By.XPATH , "//div[@class='web_ui__Image__image web_ui__Image__cover web_ui__Image__portrait web_ui__Image__scaled web_ui__Image__ratio']/img[@class='web_ui__Image__content']" ).get_attribute("src")
         
         bot.get(Img)
+
+        print(dataOut)
 
         return dataOut

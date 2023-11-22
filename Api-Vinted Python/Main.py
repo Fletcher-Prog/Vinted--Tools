@@ -19,7 +19,6 @@ def index():
 
 @app.route('/vinted')
 def Vinted_last_publish():
-
     #Argument en praramétre
     link=request.args.get("link")
     link = str(request.query_string).replace("b'","")
@@ -30,4 +29,4 @@ def Vinted_last_publish():
 
 
 if __name__ == '__main__':
-    app.run(host='10.245.23.238', port=5000)
+    app.run(host='172.26.5.140', port=5000)

@@ -1,6 +1,6 @@
 import json
 
-def chercher_chaine_dans_fichier(nom_fichier, chaine_a_chercher,channelid):
+def chercherChaineDansFichier(nom_fichier, chaine_a_chercher,channelid):
 
     # Initialisation ficher json
     dataOut = '{"message":"" , "ChannelID":""}'

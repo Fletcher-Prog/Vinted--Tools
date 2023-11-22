@@ -1,14 +1,16 @@
 import discord
+from discord.ext import *
 import Fonction as myfonction
-from discord.ext import commands
 import requests
+import Fonction.Config as cf
+from discord.ui import Button, View
+from Fonction.CreationEmbed import urlAnnonce
+
+
 
 # https://www.vinted.fr/catalog?search_text=sweat%20lacoste&price_to=15&currency=EUR&size_ids[]=207&size_ids[]=208&status_ids[]=1&status_ids[]=2&order=newest_first
 
 # .json()
-
-intents = discord.Intents.default()
-intents.message_content = True
 
 # Séparateur pour le ficher contenant les liens
 separateur = '§'
@@ -16,22 +18,30 @@ separateur = '§'
 # nom ficher contenant le liens
 fileLink = './links.txt'
 
-
-
-client = commands.Bot(command_prefix='!', intents=intents)
+# initialisation du bot 
+client = cf.client
 
 @client.command()
 async def link(ctx, *args):
-    link = 'http://127.0.0.1:3000/'+args[0]
-    print(link)
-    reponse = requests.get(link).json()
+    
+    # Lien vinted
+    global urlVinted
+    urlVinted = args[0]
+    # Récupération du derrniére article en fonction du lien 
+    annonce = myfonction.recupArticle(urlVinted)
 
-    # Permet de récupére le channel associer a l'id entre prenthése+
-    # bot.get_channel(int(channel_id))
-    print(reponse)
-    await reponse
+    # Création de l'embed en fonction d'une annonce
+    embed = myfonction.creationEmbed(annonce, urlVinted)
 
 
+    button = Button(label="Voir Annonce", style=discord.ButtonStyle.link, url=myfonction.urlAnnonce)
+    
+    view = View()
+    view.add_item(button)
+
+    await ctx.send(embed=embed, view=view)
+
+    
 
 
 @client.command()
@@ -44,8 +54,11 @@ async def addLink(ctx, *args):
     link = str(args[0]) 
 
     # Verification que le liens n'est pas déjà present 
-    resultLink = myfonction.chercher_chaine_dans_fichier(fileLink,link,channel_id)  
-    print(resultLink["message"])
+    resultLink = myfonction.chercherChaineDansFichier(fileLink,link,channel_id)  
+    
+    # Debug if 
+    # print(resultLink["message"])
+
     if resultLink["message"] == "Chaine trouvée" :
 
         # permet de récupere le nom du channel en fonction l'id : client.get_channel (int(resultLink["ChannelID"])).name
@@ -77,8 +90,6 @@ async def clear(ctx, *args):
     
     # Utilisez la méthode purge pour effacer tous les messages dans le canal
     await channel.purge(limit=nombre_messages)
-
-
 
 @client.event
 async def on_ready():
