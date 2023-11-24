@@ -1,10 +1,9 @@
 import discord
 from discord.ext import commands
-import Fonction.Config as cf
 
 
 
-def creationEmbed(reponse,url):
+def creationEmbed(reponse):
 
     # Création de l'embed avec les bonne données
     embed = discord.Embed(
@@ -21,10 +20,7 @@ def creationEmbed(reponse,url):
     # Ajout de l'image
     embed.set_image(url=str(reponse["linkImg"]))
 
-    global reponsejson 
-    reponsejson = reponse
+    urlAnnonce = reponse["LienAnnonce"]
     
 
-    return embed
-
-urlAnnonce = reponsejson["idProduit"]
+    return embed, urlAnnonce

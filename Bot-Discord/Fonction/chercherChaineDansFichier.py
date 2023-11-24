@@ -35,3 +35,5 @@ def chercherChaineDansFichier(nom_fichier, chaine_a_chercher,channelid):
         
         dataOut["message"] = "Chaine non Trouvée"
         return dataOut
+
+

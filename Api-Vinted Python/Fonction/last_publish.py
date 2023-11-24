@@ -68,10 +68,10 @@ def last_publish(url,time_wait_charging_page:int=15):
 
         # Récupération du lien de l'annonce
         try :
-                idProduit = bot.find_element(By.XPATH , ' //a[@class="new-item-box__overlay new-item-box__overlay--clickable"]')
-                idProduit = idProduit.get_attribute("href")
+                lienAnnonce = bot.find_element(By.XPATH , ' //a[@class="new-item-box__overlay new-item-box__overlay--clickable"]')
+                lienAnnonce = lienAnnonce.get_attribute("href")
         except:
-                idProduit = "Erreur lors de la récupération du prix" 
+                lienAnnonce = "Erreur lors de la récupération du prix" 
 
         # Recuper le lien de l'image
         Img =  bot.find_element(By.XPATH , "//div[@class='web_ui__Image__image web_ui__Image__cover web_ui__Image__portrait web_ui__Image__scaled web_ui__Image__ratio']/img[@class='web_ui__Image__content']" ).get_attribute("src")
@@ -87,7 +87,7 @@ def last_publish(url,time_wait_charging_page:int=15):
         dataOut["priceHTT"] = priceHTT
         dataOut["priceTTC"] = price_TTC
         dataOut["linkImg"] = Img
-        dataOut["idProduit"] = idProduit
+        dataOut["LienAnnonce"] = lienAnnonce
 
         #print(dataOut)
 
