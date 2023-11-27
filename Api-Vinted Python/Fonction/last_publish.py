@@ -28,13 +28,13 @@ def last_publish(url):
         options = webdriver.ChromeOptions()
         options.add_experimental_option("excludeSwitches", ["enable-automation"])
         options.add_experimental_option('useAutomationExtension', False)
-        options.add_argument('--headless')
+        #options.add_argument('--headless')
         options.add_argument("--disable-extensions")
         options.add_argument("--disable-popup-blocking")
         options.add_argument("--profile-directory=Default")
         options.add_argument("--ignore-certificate-errors")
         options.add_argument("--disable-plugins-discovery")
-        bot = webdriver.Chrome(options=options,  executable_path=ChromeDriverManager().install())
+        bot = webdriver.Chrome(options=options,  executable_path="chromedriver")
         bot.set_window_size(1680, 900)
         
         stealth(bot,
@@ -64,7 +64,7 @@ def last_publish(url):
         #time.sleep(time_wait_charging_page)
 
         # Spécifie le temps d'attente maximal en secondes
-        temps_attente_maximal = 10
+        temps_attente_maximal = 35
 
 
         # Attente du chargement de la page
@@ -140,3 +140,7 @@ def last_publish(url):
                 print(dataOut)
 
                 return dataOut
+        
+
+
+print(last_publish('https://www.vinted.fr/catalog?search_text=sweat%20lacoste&price_to=15&currency=EUR&size_ids[]=207&size_ids[]=208&status_ids[]=1&status_ids[]=2&order=newest_first'))
