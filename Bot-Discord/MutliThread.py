@@ -31,7 +31,6 @@ def multhread():
                     # Démarrer le thread
                     mon_thread.start()
 
-
                     indexLigneActuelle += 1
                     nblignesPrecedant = indexLigneActuelle
         
