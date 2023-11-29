@@ -137,7 +137,7 @@ def last_publish(url):
                 
                 #bot.get(Img)
 
-                print(dataOut)
+                #print(dataOut)
 
                 return dataOut
         

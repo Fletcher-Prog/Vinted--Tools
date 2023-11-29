@@ -12,6 +12,27 @@ import json
 
 app = Flask(__name__)
 
+import logging
+
+# Configurer le système de logs
+logging.basicConfig(level=logging.DEBUG)
+
+# Config log
+historique_Requette = logging.getLogger()
+handler_Historique_Requette = logging.FileHandler("requettes.txt")
+handler_Historique_Requette.setLevel(logging.INFO)
+formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+handler_Historique_Requette.setFormatter(formatter)
+historique_Requette.addHandler(handler_Historique_Requette)
+
+
+# ecriture des logs
+@app.before_request
+def log_request_info():
+    historique_Requette.info('Requête: {} {} {} ',request.remote_addr, request.method, request.url, 'Données de la requête: %s', request.get_data(as_text=True))
+
+
+
 @app.route('/')
 def index():
     return 'L\'api marche'
@@ -19,14 +40,15 @@ def index():
 
 @app.route('/vinted')
 def Vinted_last_publish():
+    
     #Argument en praramétre
     link=request.args.get("link")
     link = str(request.query_string).replace("b'","")
     result = myfonction.last_publish(str(link))
-    print(link)
+    
+    #print(link)
+    
     return result
-
-
 
 if __name__ == '__main__':
     #app.run(host='172.26.5.140', port=5000)

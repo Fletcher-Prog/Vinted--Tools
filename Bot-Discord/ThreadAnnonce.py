@@ -33,6 +33,8 @@ async def threadAnnonce(lienVinted,channelid):
 
 			canal = mypackage.client.get_channel(channelid)
 
+			ancientLienAnnonce = lienAnnonce
+
 			if canal:				
 				# Envoyez le message dans le canal spécifiécanal 
 				messageLog = "envoyé du message pour le nouvel article dans le canal : {} lienAnnonce : {} Ancient Lien Annonce : {}".format(canal, lienAnnonce, ancientLienAnnonce)
@@ -44,9 +46,9 @@ async def threadAnnonce(lienVinted,channelid):
 			else:
 				print("Canal non trouvé.")
 			
-			ancientLienAnnonce = lienAnnonce
+			
 
-			time.sleep(5)
+			time.sleep(15)
 		#print("lien égale")
 
 
