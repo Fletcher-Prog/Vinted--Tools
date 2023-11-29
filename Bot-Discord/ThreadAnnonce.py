@@ -1,14 +1,13 @@
-import Fonction as myfonction
-from Fonction import Config as config
+import Fonction as mypackage
 import asyncio
 import concurrent.futures
 import time
 
 def run_blocking_function_sync_recupArticle(lienVinted):
-    return myfonction.recupArticle(lienVinted)
+    return mypackage.recupArticle(lienVinted)
 
 def run_blocking_function_sync_creationEmbed(annonce):
-    return myfonction.creationEmbed(annonce)
+    return mypackage.creationEmbed(annonce)
 
 
 async def threadAnnonce(lienVinted,channelid):
@@ -26,20 +25,21 @@ async def threadAnnonce(lienVinted,channelid):
 		
 		#print(lienAnnonce)
 
-		if myfonction.comparaisonEntre2Chaine(ancientLienAnnonce,lienAnnonce) == False:
+		if mypackage.comparaisonEntre2Chaine(ancientLienAnnonce,lienAnnonce) == False:
 
 			embed , lienAnnonce = await asyncio.to_thread( run_blocking_function_sync_creationEmbed, annonce)
 
-			button = myfonction.createButton("Voir L'anonnce",lienAnnonce)
+			button = mypackage.createButton("Voir L'anonnce",lienAnnonce)
 
-			canal = config.client.get_channel(channelid)
+			canal = mypackage.client.get_channel(channelid)
 
 			if canal:				
 				# Envoyez le message dans le canal spécifiécanal 
 				messageLog = "envoyé du message pour le nouvel article dans le canal : {} lienAnnonce : {} Ancient Lien Annonce : {}".format(canal, lienAnnonce, ancientLienAnnonce)
 
-				config.logger.info(messageLog)
-				msg = asyncio.run_coroutine_threadsafe(envoyer(canal, embed, button ), config.client.loop)
+				mypackage.log_threadAnnonce.info(messageLog)
+				
+				msg = asyncio.run_coroutine_threadsafe(envoyer(canal, embed, button ), mypackage.client.loop)
 				msg.result()			
 			else:
 				print("Canal non trouvé.")
@@ -52,4 +52,4 @@ async def threadAnnonce(lienVinted,channelid):
 
 async def envoyer(canal , embed , button):
 		
-		await canal.send(embed=embed, view=button )
+		await canal.send(embed=embed, view=button)

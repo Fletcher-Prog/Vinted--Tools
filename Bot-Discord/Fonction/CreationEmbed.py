@@ -1,9 +1,13 @@
 import discord
 from discord.ext import commands
 
+import Fonction as mypackage
+
 
 
 def creationEmbed(reponse):
+    
+
 
     # Création de l'embed avec les bonne données
     embed = discord.Embed(

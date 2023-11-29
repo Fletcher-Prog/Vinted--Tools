@@ -1,5 +1,7 @@
 import json
 
+import Fonction as mypackage
+
 def chercherChaineDansFichier(nom_fichier, chaine_a_chercher,channelid):
 
     # Initialisation ficher json
@@ -28,12 +30,18 @@ def chercherChaineDansFichier(nom_fichier, chaine_a_chercher,channelid):
                              
                 dataOut["message"] = "Chaine trouvée"
                 dataOut["ChannelID"] = ligne.split("§")[0]
+
+                mypackage.log_ComparaisonEntre2Chaine.info("nom ficher : {} , chaine a rechercher : {} , channeid {} : , le resulta {} ".format(nom_fichier , chaine_recherchee , channelid , dataOut))
+
                 return dataOut
 
     # Si la chaîne n'est pas trouvée, vous pouvez afficher un message
     if all(chaine_recherchee != ligne.strip() for ligne in lignes):
         
         dataOut["message"] = "Chaine non Trouvée"
+
+        mypackage.log_ComparaisonEntre2Chaine.info("nom ficher : {} , chaine a rechercher : {} , channeid {} : , le resulta {} ".format(nom_fichier , chaine_recherchee , channelid , dataOut))
+        
         return dataOut
 
 

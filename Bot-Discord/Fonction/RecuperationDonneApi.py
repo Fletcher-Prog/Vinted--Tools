@@ -1,4 +1,5 @@
 import requests
+import Fonction as mypackage
 
 
 def recupArticle(link):
@@ -12,5 +13,7 @@ def recupArticle(link):
     
     # Uniformalisation des données
     reponse = requests.get(linkApi).json()
+
+    mypackage.log_RecuperationDonneApi.info("lien reçu : {} réponse {}".format(link, reponse))
 
     return reponse

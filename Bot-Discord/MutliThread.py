@@ -33,12 +33,15 @@ def multhread():
 
                     indexLigneActuelle += 1
                     nblignesPrecedant = indexLigneActuelle
+
+                
         
         
 
         else :
             print("pas de lien")
-            time.sleep(15)
+        
+        time.sleep(1)
 
 
 def lancer_thread(lien , channelid):

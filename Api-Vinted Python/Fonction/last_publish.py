@@ -28,13 +28,13 @@ def last_publish(url):
         options = webdriver.ChromeOptions()
         options.add_experimental_option("excludeSwitches", ["enable-automation"])
         options.add_experimental_option('useAutomationExtension', False)
-        #options.add_argument('--headless')
+        options.add_argument('--headless')
         options.add_argument("--disable-extensions")
         options.add_argument("--disable-popup-blocking")
         options.add_argument("--profile-directory=Default")
         options.add_argument("--ignore-certificate-errors")
         options.add_argument("--disable-plugins-discovery")
-        bot = webdriver.Chrome(options=options,  executable_path="chromedriver")
+        bot = webdriver.Chrome(options=options,  executable_path="./Chrome+Webdriver/chromedriver")
         bot.set_window_size(1680, 900)
         
         stealth(bot,

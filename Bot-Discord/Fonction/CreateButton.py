@@ -1,5 +1,6 @@
 from discord.ui import Button, View
 import discord
+import Fonction as mypackage
 
 # Permet de crée un boutton a ajouter a un message
 
