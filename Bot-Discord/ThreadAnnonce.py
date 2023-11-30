@@ -48,7 +48,7 @@ async def threadAnnonce(lienVinted,channelid):
 			
 			
 
-			time.sleep(15)
+			time.sleep(5)
 		#print("lien égale")
 
 

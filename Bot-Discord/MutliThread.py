@@ -25,9 +25,10 @@ def multhread():
                     lien = ligne[1].split('§')[1]
                     channelid = int(ligne[1].split('§')[0])
 
-                    # Créer un thread
-                    task_background = mypackage.client.loop.create_task(threadAnnonce(lien , channelid))
-                    task_background.set_name("BackgroundTask")
+                    mon_thread = threading.Thread(target=lancer_thread, args=(lien , channelid) )
+
+                    # Démarrer le thread
+                    mon_thread.start()
 
                     indexLigneActuelle += 1
                     nblignesPrecedant = indexLigneActuelle
@@ -40,3 +41,11 @@ def multhread():
             print("pas de lien")
         
 
+        time.sleep(1)
+
+
+def lancer_thread(lien , channelid):
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    loop.run_until_complete(threadAnnonce(lien, channelid))
+    loop.close()
