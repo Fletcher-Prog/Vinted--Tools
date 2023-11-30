@@ -80,7 +80,11 @@ async def clear(ctx, *args):
 @mypackage.client.event
 async def on_ready():
     print(f'We have logged in as {mypackage.client.user}')
-    mypackage.client.loop.create_task(multhread())
+    
+    # Créer un thread avec la gestion est création des thread en fonction des liens
+    mon_thread = threading.Thread(target=multhread )
 
+    # Démarrer le thread
+    mon_thread.start()
 
 mypackage.client.run('MTE1MTg5MDg0ODM4NTA4NTUyMw.G1CWu5.ehGimOTqhjIZ_h1bGjkMhwuC7fOdTX7WIu_mmY')
