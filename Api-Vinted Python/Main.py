@@ -5,11 +5,40 @@ import Fonction as myfonction
 from flask import Flask, render_template, request, g, current_app
 import json
 from waitress import serve
+import threading
+import time
 
 #Links_and_name = myfonction.tri("Links.txt","§")
 #print(Links_and_name)
 #print(myfonction.last_publish('https://www.vinted.fr/catalog?search_text=sweat%20lacoste&price_to=15&currency=EUR&size_ids[]=207&size_ids[]=208&status_ids[]=1&status_ids[]=2&order=newest_first'))
 #Lien exemple : http://127.0.0.1:3008/vinted?https://www.vinted.fr/catalog?search_text=sweat%20lacoste&price_to=15&currency=EUR&size_ids[]=207&size_ids[]=208&status_ids[]=1&status_ids[]=2&order=newest_first
+
+
+
+
+# Lancement du thread pour vider le cache
+cheminTemp: str = "/home/fletcher/Documents/GitHub/Vinted--Tools/Api-Vinted Python/Brouillon"
+
+# videCahe permet de vider le cache tant que le programe est allumer
+def videCache(cheminTemp:str):
+    
+    while True :
+        
+        myfonction.removeTemp(cheminTemp)
+    
+        time.sleep(5)
+
+videCacheThread = threading.Thread(target=videCache, args=(cheminTemp, ), name="Vider Cache")
+
+videCacheThread.start()
+
+
+
+
+
+
+
+
 
 app = Flask(__name__)
 

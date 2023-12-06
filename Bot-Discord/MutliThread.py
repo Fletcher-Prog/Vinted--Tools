@@ -1,6 +1,7 @@
 import threading
 from ThreadAnnonce import * 
 import time
+import warnings
 
 # récperer le nombre de ligne utilisé dans un ficher
 fileLink = "links.txt"
@@ -26,16 +27,15 @@ def multhread():
                     channelid = int(ligne[1].split('§')[0])
 
                     mon_thread = threading.Thread(target=lancer_thread, args=(lien , channelid) )
+                    
 
                     # Démarrer le thread
                     mon_thread.start()
 
+
                     indexLigneActuelle += 1
                     nblignesPrecedant = indexLigneActuelle
 
-                
-        
-        
 
         else :
             print("pas de lien")
