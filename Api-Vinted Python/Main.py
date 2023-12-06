@@ -17,7 +17,7 @@ import time
 
 
 # Lancement du thread pour vider le cache
-cheminTemp: str = "/home/fletcher/Documents/GitHub/Vinted--Tools/Api-Vinted Python/Brouillon"
+cheminTemp: str = "/tmp"
 
 # videCahe permet de vider le cache tant que le programe est allumer
 def videCache(cheminTemp:str):
@@ -26,7 +26,7 @@ def videCache(cheminTemp:str):
         
         myfonction.removeTemp(cheminTemp)
     
-        time.sleep(5)
+        time.sleep(1/2)
 
         myfonction.viderCorbeille()
 
