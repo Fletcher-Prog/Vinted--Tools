@@ -20,3 +20,7 @@ def removeTemp(cheminTemp):
 
 			# Permet de supprimer définitivement et de mainére récursive un dossier et son contenu
 			shutil.rmtree(cheminDossier)
+
+
+
+

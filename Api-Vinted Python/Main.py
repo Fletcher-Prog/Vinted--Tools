@@ -28,6 +28,8 @@ def videCache(cheminTemp:str):
     
         time.sleep(5)
 
+        myfonction.viderCorbeille()
+
 videCacheThread = threading.Thread(target=videCache, args=(cheminTemp, ), name="Vider Cache")
 
 videCacheThread.start()
