@@ -19,7 +19,10 @@ def removeTemp(cheminTemp):
 			cheminDossier = cheminTemp + "/" + element 
 
 			# Permet de supprimer définitivement et de mainére récursive un dossier et son contenu
-			shutil.rmtree(cheminDossier,ignore_errors=False, onerror=None)
+			try :
+				shutil.rmtree(cheminDossier,ignore_errors=False, onerror=None)
+			except:
+				print(" ")
 
 
 

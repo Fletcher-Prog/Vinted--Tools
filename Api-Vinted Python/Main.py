@@ -34,14 +34,6 @@ videCacheThread = threading.Thread(target=videCache, args=(cheminTemp, ), name="
 
 videCacheThread.start()
 
-
-
-
-
-
-
-
-
 app = Flask(__name__)
 
 import logging
