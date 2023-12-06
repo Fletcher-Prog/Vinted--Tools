@@ -85,7 +85,8 @@ def Vinted_last_publish():
 if __name__ == '__main__':
     #app.run(host='172.26.5.140', port=5000)
     #app.run(host='127.0.0.1', port=5000)
-    serve(app, host='127.0.0.1', port=5000)
+    app.run(host='127.1.1.1', port=5001)
+    #serve(app, host='127.0.0.1', port=5000)
 
 
         
