@@ -1,9 +1,13 @@
 import javax.swing.*;
-
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
 import java.awt.*;
+import java.io.InputStream;
 
 
 public class Ihm extends JFrame
@@ -29,6 +33,18 @@ public class Ihm extends JFrame
 	private CardLayout listePannel             = new CardLayout();
 	private JPanel     listeDesPannel          = new JPanel(listePannel);
 
+	// Creation du systeme de scroling text panel log 
+	private JTextArea log = new JTextArea();
+	private JScrollPane scrolPanelLog = new JScrollPane(log) ;
+
+	// Creation du systeme de scroling text panel requette 
+	private  JTextArea requette = new JTextArea();
+	private  JScrollPane scrolPanelRequette = new JScrollPane(requette) ;
+
+	private String ligneAjouter ;
+
+
+
 	// Constructucteur
     public Ihm()
     {
@@ -51,19 +67,20 @@ public class Ihm extends JFrame
 			@Override
 			public void actionPerformed(ActionEvent e)
 			{
-				listePannel.show(listeDesPannel,"pannelRequette");
-
+				listePannel.show(listeDesPannel,"pannelLog");
+				
 			}
 		});
-
+		
 		buttonPassageRequette.addActionListener(new ActionListener()
 		{
 			@Override
 			public void actionPerformed(ActionEvent e)
 			{
-				listePannel.show(listeDesPannel,"pannelLog");
+				listePannel.show(listeDesPannel,"pannelRequette");
 			}
-		});
+		});	
+
 
 		// Construction de l'overlay 
 		overlay();
@@ -80,10 +97,17 @@ public class Ihm extends JFrame
 		// Rendre la fenetre soit visible
         this.setVisible(true);
 
+		// Creation de plusieurs instance de la fonction lastLigneOfFile
+		ExecutorService executorService = Executors.newFixedThreadPool(2);
+
+		// Permet  d'attribuer les tache au thread
+        executorService.submit(() -> lastLigneOfFile("requettes.txt", requette));
+        executorService.submit(() -> lastLigneOfFile("log.txt", log));
+
     }
 
 	// Construction de l'overlay
-	public  void overlay()
+	private void overlay()
 	{
 		// Contruction des ajout pour l'overlay
 		panelOverlayDroite.setPreferredSize(new Dimension(55 , 50 ));
@@ -100,30 +124,96 @@ public class Ihm extends JFrame
 	}
 
 	// Pannel requette
-	public void pannelDesRequette()
+	private void pannelDesRequette()
 	{
-		pannelRequette.setPreferredSize(new Dimension(450,400));
+		scrolPanelRequette.setPreferredSize(new Dimension(435,400));
 
-		pannelRequette.setBackground(couleurPannelReqette);
+		pannelRequette.add(scrolPanelRequette);
 
 		listeDesPannel.add(pannelRequette,"pannelRequette") ;
 	}
 
 	// Pannel de log
-	public void pannelDesLog()
+	private void pannelDesLog()
 	{
-		pannelLog.setPreferredSize(new Dimension(450,400));
+		scrolPanelLog.setPreferredSize(new Dimension(435,400));
 
-		pannelLog.setBackground(couleurPannelLog);
+		pannelLog.add(scrolPanelLog);
 
 		//this.add(pannelLog, BorderLayout.EAST) ;		
 		listeDesPannel.add(pannelLog,"pannelLog") ;
 
 	}
 
+	private void lastLigneOfFile(String fileName, JTextArea namepannel)
+	{
+		String ligne ,lignePrecedente , lignes;
+
+		lignePrecedente = " ";
+		lignes = "";
+		ligne = " ";
+
+		 while (true) {
+            
+			try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(fileName), "UTF-8"))) {
+            
+				while ((lignes = br.readLine()) != null) {
+					
+					ligne = lignes;
+        
+				}
+
+                // Si la dernière ligne n'est pas null et est différente de la précédente, l'afficher
+                if (lignePrecedente != null && !lignePrecedente.equals(ligne)) {
+					
+					ligneAjouter = ligne ;
+					
+					// Permet de mettre a jour l'inteface sans être sur le thread UI Graphique
+					SwingUtilities.invokeLater(() -> namepannel.append(ligneAjouter + "\n"));       
+					
+					//System.out.println(ligne);
+					
+					lignePrecedente = ligne;
+        
+				}
+
+                Thread.sleep(1000);
+            } 
+			catch (Exception e) {
+            
+				System.out.println("Erreur lors de la lecture du fichier : " + e.getMessage());
+            
+			}
+        }
+	}
+
+
+
     public static void main(String[] args)
     {
+		// Lancement de la parti python de l'api 
+		String cheminApi = System.getProperty("mainApi.py");
+		
+		// Commande pour exécuter le script Python
+		String command = "python3 " + cheminApi;
+		try
+		{
+			ProcessBuilder partpython = new ProcessBuilder(command.split("\\s"));
+			Process process = partpython.start();
+		}
+		
+		catch (Exception e)
+		{
+
+		}
+
+		
+		// Instanciation de l'Ihm
         new Ihm();
+
+		
     }
+
+
 
 }

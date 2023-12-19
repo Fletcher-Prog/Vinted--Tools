@@ -1,5 +1,9 @@
 
 # For Launch mode debug : FLASK_APP=Main.py flask run
+#Links_and_name = myfonction.tri("Links.txt","§")
+#print(Links_and_name)
+#print(myfonction.last_publish('https://www.vinted.fr/catalog?search_text=sweat%20lacoste&price_to=15&currency=EUR&size_ids[]=207&size_ids[]=208&status_ids[]=1&status_ids[]=2&order=newest_first'))
+#Lien exemple : http://127.0.0.1:3008/vinted?https://www.vinted.fr/catalog?search_text=sweat%20lacoste&price_to=15&currency=EUR&size_ids[]=207&size_ids[]=208&status_ids[]=1&status_ids[]=2&order=newest_first
 
 import Fonction as myfonction
 from flask import Flask, render_template, request, g, current_app
@@ -7,14 +11,6 @@ import json
 from waitress import serve
 import threading
 import time
-
-#Links_and_name = myfonction.tri("Links.txt","§")
-#print(Links_and_name)
-#print(myfonction.last_publish('https://www.vinted.fr/catalog?search_text=sweat%20lacoste&price_to=15&currency=EUR&size_ids[]=207&size_ids[]=208&status_ids[]=1&status_ids[]=2&order=newest_first'))
-#Lien exemple : http://127.0.0.1:3008/vinted?https://www.vinted.fr/catalog?search_text=sweat%20lacoste&price_to=15&currency=EUR&size_ids[]=207&size_ids[]=208&status_ids[]=1&status_ids[]=2&order=newest_first
-
-
-
 
 # Lancement du thread pour vider le cache
 cheminTemp: str = "/tmp"
@@ -43,8 +39,8 @@ logging.basicConfig(level=logging.DEBUG)
 
 # Config log
 historique_Requette = logging.getLogger()
-handler_Historique_Requette = logging.FileHandler("requettes.txt")
-handler_Historique_Requette.setLevel(logging.INFO)
+handler_Historique_Requette = logging.FileHandler("/home/fletcher/Documents/GitHub/Vinted--Tools/Api-Vinted-Python/Interface-Graphique-Java/requettes.txt")
+handler_Historique_Requette.setLevel(logging.DEBUG)
 formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 handler_Historique_Requette.setFormatter(formatter)
 historique_Requette.addHandler(handler_Historique_Requette)
@@ -62,12 +58,15 @@ def index():
     return 'L\'api marche'
 
 
+# Argument vinted pour l'api
 @app.route('/vinted')
 def Vinted_last_publish():
     
     #Argument en praramétre
     link=request.args.get("link")
     link = str(request.query_string).replace("b'","")
+
+    # Envoie de l'argument en praramétre a la fonction last_publish
     result = myfonction.last_publish(str(link))
     
     #print(link)
