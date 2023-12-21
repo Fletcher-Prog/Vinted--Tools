@@ -39,7 +39,7 @@ logging.basicConfig(level=logging.DEBUG)
 
 # Config log
 historique_Requette = logging.getLogger()
-handler_Historique_Requette = logging.FileHandler("/home/fletcher/Documents/GitHub/Vinted--Tools/Api-Vinted-Python/Interface-Graphique-Java/requettes.txt")
+handler_Historique_Requette = logging.FileHandler("requettes.txt")
 handler_Historique_Requette.setLevel(logging.DEBUG)
 formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 handler_Historique_Requette.setFormatter(formatter)

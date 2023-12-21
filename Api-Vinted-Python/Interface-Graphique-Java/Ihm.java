@@ -223,7 +223,7 @@ public class Ihm extends JFrame
 		try 
 		{
             // Chemin vers le script Python
-            String pythonScriptPath = "/home/fletcher/Documents/GitHub/Vinted--Tools/Api-Vinted-Python/MainApi.py";
+            String pythonScriptPath = "../MainApi.py";
 
             // Construction de la commande pour exécuter le script Python
             ProcessBuilder processBuilder = new ProcessBuilder("python3", pythonScriptPath);

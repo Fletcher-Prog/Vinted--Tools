@@ -87,4 +87,4 @@ async def on_ready():
     # Démarrer le thread
     mon_thread.start()
 
-mypackage.client.run('MTE1MTg5MDg0ODM4NTA4NTUyMw.G1CWu5.ehGimOTqhjIZ_h1bGjkMhwuC7fOdTX7WIu_mmY')
+mypackage.client.run(mypackage.variable.DISCORD_TOKEN_VINTED_SAISSON)

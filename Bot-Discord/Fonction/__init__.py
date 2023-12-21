@@ -2,6 +2,7 @@ from .chercherChaineDansFichier import *
 from .RecuperationDonneApi import *
 from .CreationEmbed import *    
 from .CreateButton import *
+from .variable import *
 from .ComparaisonEntre2Chaine import *
 
 import discord

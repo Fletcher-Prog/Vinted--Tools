@@ -34,6 +34,7 @@ def last_publish(url):
                         options.add_argument('--headless')
                         options.add_argument("--disable-extensions")
                         options.add_argument("--disable-popup-blocking")
+                        options.add_argument("--disable-logging")
                         options.add_argument("--profile-directory=Default")
                         options.add_argument("--ignore-certificate-errors")
                         options.add_argument("--disable-plugins-discovery")
