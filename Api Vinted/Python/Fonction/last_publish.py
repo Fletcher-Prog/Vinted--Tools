@@ -25,7 +25,7 @@ def last_publish(url):
                         logging.basicConfig(filename='example.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
                         
                         # Créatoin d'un obke json pour avoir un retun propre
-                        dataOut = '{"name": "" , "marque": "" , "taille": "" , "priceHTT": "" , "priceTTC": "" , "linkImg": "" , "idProduit" : "" , "Error" : "" , "MsgError" : ""}'
+                        dataOut = '{"name": "" , "marque": "" , "taille": "" , "priceHTT": "" , "linkImg": "" , "idProduit" : "" , "Error" : "" , "MsgError" : ""}'
                         dataOut = json.loads(dataOut)
 
                         # Initiatisation de ERROR a Faux
@@ -95,12 +95,6 @@ def last_publish(url):
                                 dataOut["Error"] = "True"
                                 list_Name_PriceHTT_Marque_Taille = name = priceHTT = marque =taille = " Erreure bloc de récpération de l'annonce "
 
-                        # Recupe prix tout taxe
-                        try:
-                                price_TTC = bot.find_element(By.XPATH , "//h4[@class='web_ui__Text__text web_ui__Text__caption web_ui__Text__left web_ui__Text__primary']" ).text
-                        except:
-                                dataOut["Error"] = "True"
-                                price_TTC = "Erreur lors de la récupération du prix" 
 
                         # Récupération du lien de l'annonce
                         try :
@@ -123,7 +117,6 @@ def last_publish(url):
                         dataOut["marque"] = marque
                         dataOut["taille"] = taille
                         dataOut["priceHTT"] = priceHTT
-                        dataOut["priceTTC"] = price_TTC
                         dataOut["linkImg"] = Img
                         dataOut["LienAnnonce"] = lienAnnonce
 
@@ -141,4 +134,4 @@ def last_publish(url):
         return dataOut
 
 
-#print(last_publish('https://www.vinted.fr/catalog?search_text=sweat%20lacoste&price_to=15&currency=EUR&size_ids[]=207&size_ids[]=208&status_ids[]=1&status_ids[]=2&order=newest_first'))
+print(last_publish('https://www.vinted.fr/catalog?search_text=sweat%20lacoste&price_to=15&currency=EUR&size_ids[]=207&size_ids[]=208&status_ids[]=1&status_ids[]=2&order=newest_first'))
