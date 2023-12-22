@@ -6,7 +6,7 @@ def recupArticle(link):
 
     # Récupération du derrniére article en fonction du lien 
     #linkApi = 'http://172.26.5.140:5000/vinted?'+link
-    linkApi = 'http://127.1.1.1:5001/vinted?'+link
+    linkApi = 'http://127.1.1.1:5004/vinted?'+link
     
     # Debug link
     #print(link)  
