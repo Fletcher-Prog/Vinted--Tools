@@ -22,7 +22,7 @@ def last_publish(url):
                         erreur = False
 
                         # Configuration du système de logs
-                        logging.basicConfig(filename='Fonction/last_publish.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+                        logging.basicConfig(filename='Fonction/last_publish.log', level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
                         
                         # Créatoin d'un obke json pour avoir un retun propre
                         dataOut = '{"name": "" , "marque": "" , "taille": "" , "priceHTT": "" , "linkImg": "" , "idProduit" : "" , "Error" : "" , "MsgError" : ""}'

@@ -32,26 +32,6 @@ videCacheThread.start()
 
 app = Flask(__name__)
 
-import logging
-
-# # Configurer le système de logs
-# logging.basicConfig(level=logging.WARNING)
-
-
-# # Config log
-# historique_Requette = logging.getLogger()
-# handler_Historique_Requette = logging.FileHandler("requettes.txt")
-# handler_Historique_Requette.setLevel(logging.WARNING)
-# formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-# handler_Historique_Requette.setFormatter(formatter)
-# historique_Requette.addHandler(handler_Historique_Requette)
-# # ecriture des logs
-# @app.before_request
-# def log_request_info():
-#     historique_Requette.warning('Requête: {} {} {} ',request.remote_addr, request.method, request.url, 'Données de la requête: %s', request.get_data(as_text=True))
-
-
-
 @app.route('/')
 def index():
     return 'L\'api marche'
