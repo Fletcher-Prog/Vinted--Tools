@@ -139,7 +139,7 @@ def last_publish(url):
                         erreure = True 
                         logging.error(e)
 
-                        
+        bot.quit()
         return dataOut
 
 

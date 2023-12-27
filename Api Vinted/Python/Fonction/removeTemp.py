@@ -22,7 +22,7 @@ def removeTemp(cheminTemp):
 			try :
 				shutil.rmtree(cheminDossier,ignore_errors=False, onerror=None)
 			except:
-				print(" ")
+				pass
 
 
 
