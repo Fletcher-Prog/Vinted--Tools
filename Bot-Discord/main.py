@@ -61,7 +61,9 @@ async def viewlink(ctx, *args):
 
     result = mypackage.chercherChaineDansFichier("links.txt",channelid,True)
 
-    result = mypackage.lectureDeFicheParIndex("links.txt",result["indexChannelid"])
+    print(result["indexChannelid"], type(result["indexChannelid"]))
+
+    result = mypackage.lectureDeFicheParIndex("links.txt",int(result["indexChannelid"]))
 
     result = (result.split("§"))[1]
 

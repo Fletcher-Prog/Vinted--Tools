@@ -40,16 +40,6 @@ def chercherChaineDansFichier(nom_fichier, chaine_a_chercher,rechercheParChannel
                 mypackage.log_ComparaisonEntre2Chaine.info("nom ficher : {} , chaine a rechercher : {} , channeid {} : , le resulta {} ".format(nom_fichier , chaine_recherchee , ligne.split("§")[0] , dataOut))
 
                 return dataOut
-
-        # Si la chaîne n'est pas trouvée, vous pouvez afficher un message
-        if all(chaine_recherchee != ligne.strip() for ligne in lignes):
-            
-            dataOut["message"] = "Chaine non Trouvée"
-
-            mypackage.log_ComparaisonEntre2Chaine.info("nom ficher : {} , chaine a rechercher : {} , channeid {} : , le resulta {} ".format(nom_fichier , chaine_recherchee , ligne.split("§")[0] , dataOut))
-            
-            return dataOut
-        
     else:   
 
          # Initialisation ficher json
@@ -62,8 +52,8 @@ def chercherChaineDansFichier(nom_fichier, chaine_a_chercher,rechercheParChannel
             # Comparaison exacte après suppression des espaces
         
             # Débug comparaison if chaîne trouvée
-            # print("chaine rechercher : " , chaine_recherchee.lower() ," de type : " , type(chaine_recherchee))
-            # print("ligne comparé : " , ligne.split("§")[1].lower() ," de type : " , type(ligne.split("§")[1]))
+            print("chaine rechercher : " , chaine_recherchee.lower() ," de type : " , type(chaine_recherchee))
+            print("ligne comparé : " , ligne.split("§")[1].lower() ," de type : " , type(ligne.split("§")[1]))
             # (str(chaine_recherchee).lower() , str(ligne.split("§")[1]).lower())
             
             
@@ -75,15 +65,6 @@ def chercherChaineDansFichier(nom_fichier, chaine_a_chercher,rechercheParChannel
 
                 mypackage.log_ComparaisonEntre2Chaine.info("nom ficher : {} , chaine a rechercher : {} , channeid {} : , le resulta {} ".format(nom_fichier , chaine_recherchee ,  str(ligne.split("§")[0]) , dataOut))
 
-                return dataOut
-            
-            # Si la chaîne n'est pas trouvée, vous pouvez afficher un message
-            if all(chaine_recherchee != ligne.strip() for ligne in lignes):
-                
-                dataOut["message"] = "Chaine non Trouvée"
-
-                mypackage.log_ComparaisonEntre2Chaine.info("nom ficher : {} , chaine a rechercher : {} , channeid {} : , le resulta {} ".format(nom_fichier , chaine_recherchee , ligne.split("§")[0] , dataOut))
-                
                 return dataOut
     
     
