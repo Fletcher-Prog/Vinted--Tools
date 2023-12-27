@@ -7,10 +7,6 @@ import threading
 from MutliThread import multhread
 
 
-
-
-print(mypackage.chercherChaineDansFichier("links.txt", "1187465994692726894",True))
-
 @mypackage.client.command()
 async def link(ctx, *args):
     
@@ -61,9 +57,11 @@ async def viewlink(ctx, *args):
 
     channelid = str(ctx.channel.id)
 
-    result = mypackage.chercherChaineDansFichier("link.txt",channelid,True)
+    result = mypackage.chercherChaineDansFichier("links.txt",channelid,True)
 
-    result = mypackage.lectureDeFicheParIndex("link.txt",result["indexChannelid"])
+    result = mypackage.lectureDeFicheParIndex("links.txt",result["indexChannelid"])
+
+    result = (result.split("§"))[1]
 
     await ctx.send(result)
 
