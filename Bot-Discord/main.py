@@ -7,10 +7,7 @@ import threading
 from MutliThread import multhread
 
 
-
-
-print(mypackage.chercherChaineDansFichier("links.txt", "1187465994692726894",True))
-
+# Executer des que le robots reçois !link <lien>
 @mypackage.client.command()
 async def link(ctx, *args):
     
@@ -28,7 +25,7 @@ async def link(ctx, *args):
 
     await ctx.send(embed=embed, view=mypackage.createButton(label,urlAnnonce))
 
-
+# Executer des que le robots reçois !addlink <lien>
 @mypackage.client.command()
 async def addlink(ctx, *args):
     
@@ -56,6 +53,8 @@ async def addlink(ctx, *args):
 
         await ctx.send("Le lien a bien était ajouter a la base")
 
+
+# Executer des que le robots reçois !viewlink 
 @mypackage.client.command()
 async def viewlink(ctx, *args):
 
@@ -67,8 +66,7 @@ async def viewlink(ctx, *args):
 
     await ctx.send(result)
 
-
-
+# Executer des que le robots reçois !clear <nb msg sup>
 @mypackage.client.command()
 async def clear(ctx, *args):
    
@@ -91,7 +89,8 @@ async def clear(ctx, *args):
     
     # Utilisez la méthode purge pour effacer tous les messages dans le canal
     await ctx.channel.purge(limit=nombre_messages)
-    
+
+# Executer des que le robots est allumer
 @mypackage.client.event
 async def on_ready():
     print(f'We have logged in as {mypackage.client.user}')

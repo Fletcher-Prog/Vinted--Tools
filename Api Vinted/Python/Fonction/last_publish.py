@@ -25,7 +25,7 @@ def last_publish(url):
                         logging.basicConfig(filename='Fonction/last_publish.log', level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
                         
                         # Créatoin d'un obke json pour avoir un retun propre
-                        dataOut = '{"name": "" , "marque": "" , "taille": "" , "priceHTT": "" , "linkImg": "" , "idProduit" : "" , "Error" : "" , "MsgError" : ""}'
+                        dataOut = '{"name": "" , "marque": "" , "taille": "" , "priceHTT": "" , "linkImg": "" , "idProduit" : "","titreAnnonce": "" , "Error" : "" , "MsgError" : ""}'
                         dataOut = json.loads(dataOut)
 
                         # Initiatisation de ERROR a Faux
@@ -112,14 +112,22 @@ def last_publish(url):
                                 dataOut["Error"] = "True"
                                 Img = "Erreur lors de la récupération de l'image" 
 
-                        
+                        # A tester !!!!!!!
+                        # Recuper le lien de le titre de l'annonce
+                        try : 
+                                titreAnnonce =  bot.find_element(By.XPATH , "//div[@class='web_ui__Image__image web_ui__Image__cover web_ui__Image__portrait web_ui__Image__scaled web_ui__Image__ratio']/img[@class='web_ui__Image__content']" ).get_attribute("alt")
+                        except:
+                                dataOut["Error"] = "True"
+                                titreAnnonce = "Erreur lors de la récupération du titre" 
+                                                        
                         # Mise a jours de l'objet json pour avoir les données recupére 
-                        dataOut["name"] = name
-                        dataOut["marque"] = marque
-                        dataOut["taille"] = taille
-                        dataOut["priceHTT"] = priceHTT
-                        dataOut["linkImg"] = Img
-                        dataOut["LienAnnonce"] = lienAnnonce
+                        dataOut["name"]         = name
+                        dataOut["marque"]       = marque
+                        dataOut["taille"]       = taille
+                        dataOut["priceHTT"]     = priceHTT
+                        dataOut["linkImg"]      = Img
+                        dataOut["LienAnnonce"]  = lienAnnonce
+                        dataOut["titreAnnonce"] = titreAnnonce
 
 
                         #print(dataOut)
@@ -135,4 +143,3 @@ def last_publish(url):
         return dataOut
 
 
-#print(last_publish('https://www.vinted.fr/catalog?search_text=sweat%20lacoste&price_to=15&currency=EUR&size_ids[]=207&size_ids[]=208&status_ids[]=1&status_ids[]=2&order=newest_first'))

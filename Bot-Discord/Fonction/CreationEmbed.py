@@ -11,7 +11,7 @@ def creationEmbed(reponse):
 
     # Création de l'embed avec les bonne données
     embed = discord.Embed(
-         title = "Annonce Vinted"
+         title = str(reponse["titreAnnonce"])
     )
 
     # Ajout de différent chants
