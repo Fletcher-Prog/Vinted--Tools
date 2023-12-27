@@ -20,8 +20,11 @@ def creationEmbed(reponse):
     embed.add_field(name="Nom de Vendeur : " , value=str(reponse["name"]), inline=False)
     embed.add_field(name="Prix HT : " , value=str(reponse["priceHTT"]), inline=False)
     
-    # Ajout de l'image
-    embed.set_image(url=str(reponse["linkImg"]))
+    # Ajout de l'image le try permet que si l'api n'a pas pue recupére  le lien de l'image d'envoye quand même l'embed
+    try:
+        embed.set_image(url=str(reponse["linkImg"]))
+    except:
+    	print("")
 
     urlAnnonce = reponse["LienAnnonce"]
     

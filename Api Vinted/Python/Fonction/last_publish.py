@@ -22,7 +22,7 @@ def last_publish(url):
                         erreur = False
 
                         # Configuration du système de logs
-                        logging.basicConfig(filename='example.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+                        logging.basicConfig(filename='Fonction/last_publish.log', level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
                         
                         # Créatoin d'un obke json pour avoir un retun propre
                         dataOut = '{"name": "" , "marque": "" , "taille": "" , "priceHTT": "" , "linkImg": "" , "idProduit" : "" , "Error" : "" , "MsgError" : ""}'
@@ -38,6 +38,7 @@ def last_publish(url):
                         options.add_argument('--headless')
                         options.add_argument("--disable-extensions")
                         options.add_argument("--disable-popup-blocking")
+                        options.add_argument("--no-sandbox")
                         options.add_argument("--disable-logging")
                         options.add_argument("--profile-directory=Default")
                         options.add_argument("--ignore-certificate-errors")
@@ -134,4 +135,4 @@ def last_publish(url):
         return dataOut
 
 
-print(last_publish('https://www.vinted.fr/catalog?search_text=sweat%20lacoste&price_to=15&currency=EUR&size_ids[]=207&size_ids[]=208&status_ids[]=1&status_ids[]=2&order=newest_first'))
+#print(last_publish('https://www.vinted.fr/catalog?search_text=sweat%20lacoste&price_to=15&currency=EUR&size_ids[]=207&size_ids[]=208&status_ids[]=1&status_ids[]=2&order=newest_first'))
