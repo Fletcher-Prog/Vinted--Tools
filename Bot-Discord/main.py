@@ -7,6 +7,10 @@ import threading
 from MutliThread import multhread
 
 
+
+
+print(mypackage.chercherChaineDansFichier("links.txt", "1187465994692726894",True))
+
 @mypackage.client.command()
 async def link(ctx, *args):
     
@@ -26,7 +30,7 @@ async def link(ctx, *args):
 
 
 @mypackage.client.command()
-async def addLink(ctx, *args):
+async def addlink(ctx, *args):
     
     # Récupérez l'ID du canal où la commande a été exécutée
     channel_id = ctx.channel.id
@@ -35,7 +39,7 @@ async def addLink(ctx, *args):
     link = str(args[0]) 
 
     # Verification que le liens n'est pas déjà present 
-    resultLink = mypackage.chercherChaineDansFichier(mypackage.fileLink,link,channel_id)  
+    resultLink = mypackage.chercherChaineDansFichier(mypackage.fileLink,link)  
     
     # Debug if 
     # print(resultLink["message"])
@@ -51,6 +55,17 @@ async def addLink(ctx, *args):
             file.write(str(channel_id) + mypackage.separateur + link + '\n')
 
         await ctx.send("Le lien a bien était ajouter a la base")
+
+@mypackage.client.command()
+async def viewlink(ctx, *args):
+
+    channelid = str(ctx.channel.id)
+
+    result = mypackage.chercherChaineDansFichier("link.txt",channelid,True)
+
+    result = mypackage.lectureDeFicheParIndex("link.txt",result["indexChannelid"])
+
+    await ctx.send(result)
 
 
 

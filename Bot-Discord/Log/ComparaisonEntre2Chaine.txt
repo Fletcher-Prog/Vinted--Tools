@@ -203,3 +203,75 @@
 2023-12-22 15:22:40,646 - ./Log/ComparaisonEntre2Chaine - INFO - 1er chaine : https://www.vinted.fr/items/3902862380-tee-shirts-nike?referrer=catalog 2éme chaine : https://www.vinted.fr/items/3902862380-tee-shirts-nike?referrer=catalog Resulta : true
 2023-12-22 15:22:50,611 - ./Log/ComparaisonEntre2Chaine - INFO - 1er chaine : https://www.vinted.fr/items/3902862380-tee-shirts-nike?referrer=catalog 2éme chaine : https://www.vinted.fr/items/3902862380-tee-shirts-nike?referrer=catalog Resulta : true
 2023-12-22 15:23:01,986 - ./Log/ComparaisonEntre2Chaine - INFO - 1er chaine : https://www.vinted.fr/items/3902862380-tee-shirts-nike?referrer=catalog 2éme chaine : https://www.vinted.fr/items/3902862380-tee-shirts-nike?referrer=catalog Resulta : true
+2023-12-27 04:44:04,834 - ./Log/ComparaisonEntre2Chaine - INFO - nom ficher : links.txt , chaine a rechercher : Anas , channeid eezz : , le resulta {'message': 'Chaine non Trouvée', 'ChannelID': '', 'index': ''} 
+2023-12-27 04:44:58,020 - ./Log/ComparaisonEntre2Chaine - INFO - nom ficher : links.txt , chaine a rechercher : Anas , channeid eezz : , le resulta {'message': 'Chaine non Trouvée', 'ChannelID': '', 'index': ''} 
+2023-12-27 04:46:33,093 - ./Log/ComparaisonEntre2Chaine - INFO - nom ficher : links.txt , chaine a rechercher : Anas , channeid eezz : , le resulta {'message': 'Chaine non Trouvée', 'ChannelID': '', 'index': ''} 
+2023-12-27 04:52:27,715 - ./Log/ComparaisonEntre2Chaine - INFO - nom ficher : links.txt , chaine a rechercher : Anas , channeid eezz : , le resulta {'message': 'Chaine non Trouvée', 'ChannelID': '', 'index': ''} 
+2023-12-27 04:53:33,725 - ./Log/ComparaisonEntre2Chaine - INFO - nom ficher : links.txt , chaine a rechercher : Anas , channeid eezz : , le resulta {'message': 'Chaine non Trouvée', 'ChannelID': '', 'index': ''} 
+2023-12-27 04:55:37,385 - ./Log/ComparaisonEntre2Chaine - INFO - 1er chaine : anas 2éme chaine : https://www.vinted.fr/catalog?search_text=&size_ids[]=207&size_ids[]=208&brand_ids[]=53&brand_ids[]=304&brand_ids[]=88&brand_ids[]=4273&brand_ids[]=362&brand_ids[]=94&brand_ids[]=302493&brand_ids[]=14969&brand_ids[]=5291&order=newest_first&price_to=16&currency=eur&price_from=2&catalog[]=181
+ Resulta : true
+2023-12-27 04:55:37,386 - ./Log/ComparaisonEntre2Chaine - INFO - 1er chaine : anas 2éme chaine : anas
+ Resulta : true
+2023-12-27 04:55:37,386 - ./Log/ComparaisonEntre2Chaine - INFO - nom ficher : links.txt , chaine a rechercher : Anas , channeid eezz : , le resulta {'message': 'Chaine non Trouvée', 'ChannelID': '', 'index': ''} 
+2023-12-27 04:57:52,533 - ./Log/ComparaisonEntre2Chaine - INFO - 1er chaine : anas 2éme chaine : https://www.vinted.fr/catalog?search_text=&size_ids[]=207&size_ids[]=208&brand_ids[]=53&brand_ids[]=304&brand_ids[]=88&brand_ids[]=4273&brand_ids[]=362&brand_ids[]=94&brand_ids[]=302493&brand_ids[]=14969&brand_ids[]=5291&order=newest_first&price_to=16&currency=eur&price_from=2&catalog[]=181
+ Resulta : true
+2023-12-27 04:57:52,534 - ./Log/ComparaisonEntre2Chaine - INFO - 1er chaine : anas 2éme chaine : anas
+ Resulta : true
+2023-12-27 04:58:34,234 - ./Log/ComparaisonEntre2Chaine - INFO - 1er chaine : anas 2éme chaine : https://www.vinted.fr/catalog?search_text=&size_ids[]=207&size_ids[]=208&brand_ids[]=53&brand_ids[]=304&brand_ids[]=88&brand_ids[]=4273&brand_ids[]=362&brand_ids[]=94&brand_ids[]=302493&brand_ids[]=14969&brand_ids[]=5291&order=newest_first&price_to=16&currency=eur&price_from=2&catalog[]=181
+ Resulta : true
+2023-12-27 04:58:34,235 - ./Log/ComparaisonEntre2Chaine - INFO - 1er chaine : anas 2éme chaine : anas
+ Resulta : true
+2023-12-27 04:59:04,515 - ./Log/ComparaisonEntre2Chaine - INFO - 1er chaine : anas 2éme chaine : https://www.vinted.fr/catalog?search_text=&size_ids[]=207&size_ids[]=208&brand_ids[]=53&brand_ids[]=304&brand_ids[]=88&brand_ids[]=4273&brand_ids[]=362&brand_ids[]=94&brand_ids[]=302493&brand_ids[]=14969&brand_ids[]=5291&order=newest_first&price_to=16&currency=eur&price_from=2&catalog[]=181
+ Resulta : true
+2023-12-27 04:59:04,516 - ./Log/ComparaisonEntre2Chaine - INFO - 1er chaine : anas 2éme chaine : anas
+ Resulta : true
+2023-12-27 04:59:42,364 - ./Log/ComparaisonEntre2Chaine - INFO - 1er chaine : anas 2éme chaine : https://www.vinted.fr/catalog?search_text=&size_ids[]=207&size_ids[]=208&brand_ids[]=53&brand_ids[]=304&brand_ids[]=88&brand_ids[]=4273&brand_ids[]=362&brand_ids[]=94&brand_ids[]=302493&brand_ids[]=14969&brand_ids[]=5291&order=newest_first&price_to=16&currency=eur&price_from=2&catalog[]=181
+ Resulta : true
+2023-12-27 04:59:42,365 - ./Log/ComparaisonEntre2Chaine - INFO - 1er chaine : anas 2éme chaine : https://www.vinted.fr/catalog?search_text=&size_ids[]=207&size_ids[]=208&brand_ids[]=53&brand_ids[]=304&brand_ids[]=88&brand_ids[]=4273&brand_ids[]=362&brand_ids[]=94&brand_ids[]=302493&brand_ids[]=14969&brand_ids[]=5291&order=newest_first&price_to=16&currency=eur&price_from=2&catalog[]=181
+ Resulta : true
+2023-12-27 04:59:42,365 - ./Log/ComparaisonEntre2Chaine - INFO - 1er chaine : anas 2éme chaine : anas
+ Resulta : true
+2023-12-27 04:59:42,366 - ./Log/ComparaisonEntre2Chaine - INFO - 1er chaine : anas 2éme chaine : anas
+ Resulta : true
+2023-12-27 05:00:28,367 - ./Log/ComparaisonEntre2Chaine - INFO - 1er chaine : anas 2éme chaine : https://www.vinted.fr/catalog?search_text=&size_ids[]=207&size_ids[]=208&brand_ids[]=53&brand_ids[]=304&brand_ids[]=88&brand_ids[]=4273&brand_ids[]=362&brand_ids[]=94&brand_ids[]=302493&brand_ids[]=14969&brand_ids[]=5291&order=newest_first&price_to=16&currency=eur&price_from=2&catalog[]=181
+ Resulta : true
+2023-12-27 05:00:42,056 - ./Log/ComparaisonEntre2Chaine - INFO - 1er chaine : anas 2éme chaine : https://www.vinted.fr/catalog?search_text=&size_ids[]=207&size_ids[]=208&brand_ids[]=53&brand_ids[]=304&brand_ids[]=88&brand_ids[]=4273&brand_ids[]=362&brand_ids[]=94&brand_ids[]=302493&brand_ids[]=14969&brand_ids[]=5291&order=newest_first&price_to=16&currency=eur&price_from=2&catalog[]=181
+ Resulta : true
+2023-12-27 05:00:42,057 - ./Log/ComparaisonEntre2Chaine - INFO - 1er chaine : anas 2éme chaine : https://www.vinted.fr/catalog?search_text=&size_ids[]=207&size_ids[]=208&brand_ids[]=53&brand_ids[]=304&brand_ids[]=88&brand_ids[]=4273&brand_ids[]=362&brand_ids[]=94&brand_ids[]=302493&brand_ids[]=14969&brand_ids[]=5291&order=newest_first&price_to=16&currency=eur&price_from=2&catalog[]=181
+ Resulta : true
+2023-12-27 05:00:42,057 - ./Log/ComparaisonEntre2Chaine - INFO - 1er chaine : anas 2éme chaine : anas
+ Resulta : true
+2023-12-27 05:00:42,058 - ./Log/ComparaisonEntre2Chaine - INFO - 1er chaine : anas 2éme chaine : anas
+ Resulta : true
+2023-12-27 05:02:07,684 - ./Log/ComparaisonEntre2Chaine - INFO - 1er chaine : anas 2éme chaine : https://www.vinted.fr/catalog?search_text=&size_ids[]=207&size_ids[]=208&brand_ids[]=53&brand_ids[]=304&brand_ids[]=88&brand_ids[]=4273&brand_ids[]=362&brand_ids[]=94&brand_ids[]=302493&brand_ids[]=14969&brand_ids[]=5291&order=newest_first&price_to=16&currency=eur&price_from=2&catalog[]=181
+ Resulta : false
+2023-12-27 05:02:07,689 - ./Log/ComparaisonEntre2Chaine - INFO - 1er chaine : anas 2éme chaine : https://www.vinted.fr/catalog?search_text=&size_ids[]=207&size_ids[]=208&brand_ids[]=53&brand_ids[]=304&brand_ids[]=88&brand_ids[]=4273&brand_ids[]=362&brand_ids[]=94&brand_ids[]=302493&brand_ids[]=14969&brand_ids[]=5291&order=newest_first&price_to=16&currency=eur&price_from=2&catalog[]=181
+ Resulta : false
+2023-12-27 05:02:07,689 - ./Log/ComparaisonEntre2Chaine - INFO - 1er chaine : anas 2éme chaine : anas
+ Resulta : false
+2023-12-27 05:02:07,690 - ./Log/ComparaisonEntre2Chaine - INFO - 1er chaine : anas 2éme chaine : anas
+ Resulta : false
+2023-12-27 05:05:51,595 - ./Log/ComparaisonEntre2Chaine - INFO - 1er chaine : anas 2éme chaine : https://www.vinted.fr/catalog?search_text=&size_ids[]=207&size_ids[]=208&brand_ids[]=53&brand_ids[]=304&brand_ids[]=88&brand_ids[]=4273&brand_ids[]=362&brand_ids[]=94&brand_ids[]=302493&brand_ids[]=14969&brand_ids[]=5291&order=newest_first&price_to=16&currency=eur&price_from=2&catalog[]=181
+ Resulta : false
+2023-12-27 05:05:51,596 - ./Log/ComparaisonEntre2Chaine - INFO - 1er chaine : anas 2éme chaine : https://www.vinted.fr/catalog?search_text=&size_ids[]=207&size_ids[]=208&brand_ids[]=53&brand_ids[]=304&brand_ids[]=88&brand_ids[]=4273&brand_ids[]=362&brand_ids[]=94&brand_ids[]=302493&brand_ids[]=14969&brand_ids[]=5291&order=newest_first&price_to=16&currency=eur&price_from=2&catalog[]=181
+ Resulta : false
+2023-12-27 05:05:51,596 - ./Log/ComparaisonEntre2Chaine - INFO - 1er chaine : anas 2éme chaine : anas
+ Resulta : false
+2023-12-27 05:05:51,596 - ./Log/ComparaisonEntre2Chaine - INFO - 1er chaine : anas 2éme chaine : anas
+ Resulta : false
+2023-12-27 05:06:36,988 - ./Log/ComparaisonEntre2Chaine - INFO - 1er chaine : anas 2éme chaine : https://www.vinted.fr/catalog?search_text=&size_ids[]=207&size_ids[]=208&brand_ids[]=53&brand_ids[]=304&brand_ids[]=88&brand_ids[]=4273&brand_ids[]=362&brand_ids[]=94&brand_ids[]=302493&brand_ids[]=14969&brand_ids[]=5291&order=newest_first&price_to=16&currency=eur&price_from=2&catalog[]=181
+ Resulta : false
+2023-12-27 05:06:36,989 - ./Log/ComparaisonEntre2Chaine - INFO - nom ficher : links.txt , chaine a rechercher : Anas , channeid eezz : , le resulta {'message': 'Chaine trouvée', 'ChannelID': '1187465994692726894', 'index': 1} 
+2023-12-27 05:08:42,001 - ./Log/ComparaisonEntre2Chaine - INFO - nom ficher : links.txt , chaine a rechercher : Anas , channeid eezz : , le resulta {'message': 'Chaine trouvée', 'ChannelID': '1187465994692726894', 'index': 1} 
+2023-12-27 05:09:56,244 - ./Log/ComparaisonEntre2Chaine - INFO - nom ficher : links.txt , chaine a rechercher : Anas , channeid eezz : , le resulta {'message': 'Chaine non Trouvée', 'ChannelID': '', 'index': ''} 
+2023-12-27 05:19:55,634 - ./Log/ComparaisonEntre2Chaine - INFO - nom ficher : links.txt , chaine a rechercher : Anas , channeid eezz : , le resulta {'message': 'Chaine non Trouvée', 'ChannelID': '', 'index': ''} 
+2023-12-27 05:20:24,710 - ./Log/ComparaisonEntre2Chaine - INFO - nom ficher : links.txt , chaine a rechercher : Anas , channeid eezz : , le resulta {'message': 'Chaine trouvée', 'ChannelID': '1242541342', 'index': 2} 
+2023-12-27 05:22:16,415 - ./Log/ComparaisonEntre2Chaine - INFO - 1er chaine : anas 2éme chaine : https://www.vinted.fr/catalog?search_text=&size_ids[]=207&size_ids[]=208&brand_ids[]=53&brand_ids[]=304&brand_ids[]=88&brand_ids[]=4273&brand_ids[]=362&brand_ids[]=94&brand_ids[]=302493&brand_ids[]=14969&brand_ids[]=5291&order=newest_first&price_to=16&currency=eur&price_from=2&catalog[]=181 Resulta : false
+2023-12-27 05:22:16,416 - ./Log/ComparaisonEntre2Chaine - INFO - 1er chaine : anas 2éme chaine : anas Resulta : true
+2023-12-27 05:22:16,416 - ./Log/ComparaisonEntre2Chaine - INFO - nom ficher : links.txt , chaine a rechercher : Anas , channeid eezz : , le resulta {'message': 'Chaine trouvée', 'ChannelID': '1242541342', 'index': 1} 
+2023-12-27 05:23:10,246 - ./Log/ComparaisonEntre2Chaine - INFO - 1er chaine : anas 2éme chaine : https://www.vinted.fr/catalog?search_text=&size_ids[]=207&size_ids[]=208&brand_ids[]=53&brand_ids[]=304&brand_ids[]=88&brand_ids[]=4273&brand_ids[]=362&brand_ids[]=94&brand_ids[]=302493&brand_ids[]=14969&brand_ids[]=5291&order=newest_first&price_to=16&currency=eur&price_from=2&catalog[]=181 Resulta : false
+2023-12-27 05:23:10,247 - ./Log/ComparaisonEntre2Chaine - INFO - 1er chaine : anas 2éme chaine : anas Resulta : true
+2023-12-27 05:23:10,247 - ./Log/ComparaisonEntre2Chaine - INFO - nom ficher : links.txt , chaine a rechercher : Anas , channeid eezz : , le resulta {'message': 'Chaine trouvée', 'ChannelID': '1242541342', 'index': 1} 
+2023-12-27 05:36:50,210 - ./Log/ComparaisonEntre2Chaine - INFO - 1er chaine : 1187465994692726894 2éme chaine : 1187465994692726894 Resulta : true
+2023-12-27 05:37:21,512 - ./Log/ComparaisonEntre2Chaine - INFO - 1er chaine : 1187465994692726894 2éme chaine : 1187465994692726894 Resulta : true
+2023-12-27 05:37:21,513 - ./Log/ComparaisonEntre2Chaine - INFO - nom ficher : links.txt , chaine a rechercher : 1187465994692726894 , channeid 1187465994692726894 : , le resulta {'message': 'Chaine trouvée', 'Chaine': 'https://www.vinted.fr/catalog?search_text=&size_ids[]=207&size_ids[]=208&brand_ids[]=53&brand_ids[]=304&brand_ids[]=88&brand_ids[]=4273&brand_ids[]=362&brand_ids[]=94&brand_ids[]=302493&brand_ids[]=14969&brand_ids[]=5291&order=newest_first&price_to=16&currency=EUR&price_from=2&catalog[]=181\n', 'indexChannelid': 0} 
