@@ -24,12 +24,12 @@ async def threadAnnonce(lienVinted,channelid):
 
 		lienAnnonce = annonce["LienAnnonce"]
 		
-		#print(lienAnnonce)
+		print(lienAnnonce)
 
 		# Vefrification de l'intégriter des donnée
 		if annonce["Error"] == "False" :
 
-			if mypackage.comparaisonEntre2Chaine(precedantPrecedantLienAnnonce,lienAnnonce) == False &  mypackage.comparaisonEntre2Chaine(precedantLienAnnonce,lienAnnonce) == False :
+			if mypackage.comparaisonEntre2Chaine(precedantPrecedantLienAnnonce,lienAnnonce) == False |  mypackage.comparaisonEntre2Chaine(precedantLienAnnonce,lienAnnonce) == False :
 
 				embed , lienAnnonce = await asyncio.to_thread( run_blocking_function_sync_creationEmbed, annonce)
 
@@ -39,6 +39,9 @@ async def threadAnnonce(lienVinted,channelid):
 
 				precedantPrecedantLienAnnonce = precedantLienAnnonce
 				precedantLienAnnonce = lienAnnonce		
+				#print ("precedantPrecedantLienAnnonce : " ,precedantPrecedantLienAnnonce)
+				#print ("precedantLienAnnonce          : " ,precedantLienAnnonce)
+				#print("lienAnnonce                    : " ,lienAnnonce)
 
 				if canal:				
 					# Envoyez le message dans le canal spécifiécanal 
