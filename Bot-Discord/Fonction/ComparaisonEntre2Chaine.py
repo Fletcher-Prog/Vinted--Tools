@@ -12,5 +12,4 @@ def comparaisonEntre2Chaine(DernierNomAnnonce,NomActuelAnnonce) :
 		return False
 	
 	else :
-		mypackage.log_ComparaisonEntre2Chaine.info("1er chaine : {} 2éme chaine : {} Resulta : true".format(DernierNomAnnonce , NomActuelAnnonce))
 		return True

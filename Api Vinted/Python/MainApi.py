@@ -50,7 +50,22 @@ def index():
 # Argument vinted pour l'api
 @app.route('/vinted')
 def Vinted_last_publish():
+
+    # Récuperation du lien dans le headers de la requette
+    lien = request.args.get('LienVinted')
+
+    if lien:
+
+        print ("Lien recu " , lien)       
+
+        # Envoie de l'argument en praramétre a la fonction last_publish
+        result = myfonction.last_publish(str(lien))
+
+        print(result)
+
+        return result     
     
+
     #Argument en praramétre
     link=request.args.get("link")
     link = str(request.query_string).replace("b'","")
@@ -61,6 +76,7 @@ def Vinted_last_publish():
     #print(link)
     
     return result
+
 
 if __name__ == '__main__':
     #app.run(host='172.26.5.140', port=5000)

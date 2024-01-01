@@ -37,7 +37,7 @@ def chercherChaineDansFichier(nom_fichier, chaine_a_chercher,rechercheParChannel
                 dataOut["ChannelID"] = ligne.split("§")[0]
                 dataOut["indexChaine"]     = (numero_ligne -1)
 
-                mypackage.log_ComparaisonEntre2Chaine.info("nom ficher : {} , chaine a rechercher : {} , channeid {} : , le resulta {} ".format(nom_fichier , chaine_recherchee , ligne.split("§")[0] , dataOut))
+                mypackage.log_chercherChaineDansFichier.info("nom ficher : {} , chaine a rechercher : {} , channeid {} : , le resulta {} ".format(nom_fichier , chaine_recherchee , ligne.split("§")[0] , dataOut))
 
                 return dataOut
     else:   
@@ -63,7 +63,7 @@ def chercherChaineDansFichier(nom_fichier, chaine_a_chercher,rechercheParChannel
                 dataOut["Chaine"]             = ligne.split("§")[1]
                 dataOut["indexChannelid"]     = (numero_ligne -1)
 
-                mypackage.log_ComparaisonEntre2Chaine.info("nom ficher : {} , chaine a rechercher : {} , channeid {} : , le resulta {} ".format(nom_fichier , chaine_recherchee ,  str(ligne.split("§")[0]) , dataOut))
+                mypackage.log_chercherChaineDansFichier.info("nom ficher : {} , chaine a rechercher : {} , channeid {} : , le resulta {} ".format(nom_fichier , chaine_recherchee ,  str(ligne.split("§")[0]) , dataOut))
 
                 return dataOut
     

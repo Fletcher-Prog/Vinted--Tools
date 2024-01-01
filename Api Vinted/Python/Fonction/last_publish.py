@@ -22,7 +22,7 @@ def last_publish(url):
                         erreur = False
 
                         # Configuration du système de logs
-                        logging.basicConfig(filename='Fonction/last_publish.log', level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
+                        logging.basicConfig(filename='Api Vinted/Fonction/last_publish.txt', level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
                         
                         # Créatoin d'un obke json pour avoir un retun propre
                         dataOut = '{"name": "" , "marque": "" , "taille": "" , "priceHTT": "" , "linkImg": "" , "idProduit" : "","titreAnnonce": "" , "Error" : "" , "MsgError" : ""}'
@@ -33,18 +33,21 @@ def last_publish(url):
 
                         #Auto install Driver et config web driver
                         options = webdriver.ChromeOptions()
-                        options.add_experimental_option("excludeSwitches", ["enable-automation"])
-                        options.add_experimental_option('useAutomationExtension', False)
-                        options.add_argument('--headless')
+                        options.add_argument("--disable-software-rasterizer")
+                        options.add_argument("--disable-dev-shm-usage")
+                        options.add_argument("--disable-accelerated-2d-canvas")
+                        options.add_argument("--disable-gpu")
                         options.add_argument("--disable-extensions")
                         options.add_argument("--disable-popup-blocking")
+                        options.add_argument("--disable-dev-shm-usage")
                         options.add_argument("--no-sandbox")
                         options.add_argument("--disable-logging")
-                        options.add_argument("--profile-directory=Default")
-                        options.add_argument("--ignore-certificate-errors")
-                        options.add_argument("--disable-plugins-discovery")
-                        bot = webdriver.Chrome(options=options,  executable_path="./Chrome+Webdriver/chromedriver")
-                        bot.set_window_size(1680, 900)
+                        options.add_argument("--disable-plugins")
+                        options.add_argument("--headless")
+                        options.add_argument("--disable-software-rasterizer")
+
+                        bot = webdriver.Chrome(options=options, )
+                       # bot.set_window_size(1680, 900)
                         
                         stealth(bot,
                                 languages=["fr-FR", "fr"],
@@ -59,18 +62,26 @@ def last_publish(url):
                         bot.implicitly_wait(15)
                         
                         # Gestion de l'erreur en cas d'abscense de connection 
-                        try :
-                                bot.get(url)
-                        except Exception as e :
+                        while True :
+                               
+                                try :
+                                        dataOut["Error"] = "False"      
+                                        bot.get(url)
                                 
-                                erreurRencontre = str(e)
-                                
-                                messageErreurAttendu = "net::ERR_INTERNET_DISCONNECTED"
-
-                                if messageErreurAttendu in erreurRencontre :
+                                except Exception as e :
                                         
-                                        dataOut["Error"] = "True"
-                                        dataOut["MsgError"] = "La connextion internet est rompu" 
+                                        erreurRencontre = str(e)
+                                        
+                                        messageErreurAttendu = "net::ERR_INTERNET_DISCONNECTED"
+
+                                        if messageErreurAttendu in erreurRencontre :
+                                                
+                                                dataOut["Error"] = "True"
+                                                dataOut["MsgError"] = "La connextion internet est rompu" 
+                               
+                                if dataOut["Error"] == "False":
+                                        break
+                                        
 
                         # Recuperation de plusieure info sur l'annonce d'on Name PriceHTT Marque Taille
                         try:    
@@ -103,7 +114,7 @@ def last_publish(url):
                                 lienAnnonce = lienAnnonce.get_attribute("href")
                         except:
                                 dataOut["Error"] = "True"
-                                lienAnnonce = "Erreur lors de la récupération du prix" 
+                                lienAnnonce = "Erreur lors de la récupération du lien" 
 
                         # Recuper le lien de l'image
                         try : 
@@ -142,4 +153,4 @@ def last_publish(url):
         bot.quit()
         return dataOut
 
-
+#print(last_publish("https://www.vinted.fr/catalog?search_text=sweat%20lacoste&price_to=15&currency=EUR&size_ids[]=207&size_ids[]=208&status_ids[]=1&status_ids[]=2&order=newest_first"))

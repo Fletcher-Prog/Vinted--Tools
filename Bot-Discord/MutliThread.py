@@ -4,7 +4,7 @@ import time
 import warnings
 
 # récperer le nombre de ligne utilisé dans un ficher
-fileLink = "links.txt"
+fileLink = "Bot-Discord/links.txt"
 
 def multhread():
     

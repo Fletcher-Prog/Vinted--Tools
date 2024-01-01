@@ -1,0 +1,5 @@
+selenium==4.16.0
+selenium-stealth==1.0.6
+waitress==2.1.2
+webdriver-manager==4.0.1
+Flask==3.0.0

@@ -13,7 +13,8 @@ def run_blocking_function_sync_creationEmbed(annonce):
 async def threadAnnonce(lienVinted,channelid):
 
 
-	ancientLienAnnonce = " "
+	precedantPrecedantLienAnnonce = " "
+	precedantLienAnnonce            = " "
 
 	loop = asyncio.get_event_loop()
 
@@ -25,26 +26,30 @@ async def threadAnnonce(lienVinted,channelid):
 		
 		#print(lienAnnonce)
 
-		if mypackage.comparaisonEntre2Chaine(ancientLienAnnonce,lienAnnonce) == False:
+		# Vefrification de l'intégriter des donnée
+		if annonce["Error"] == "False" :
 
-			embed , lienAnnonce = await asyncio.to_thread( run_blocking_function_sync_creationEmbed, annonce)
+			if mypackage.comparaisonEntre2Chaine(precedantPrecedantLienAnnonce,lienAnnonce) == False &  mypackage.comparaisonEntre2Chaine(precedantLienAnnonce,lienAnnonce) == False :
 
-			button = mypackage.createButton("Voir L'anonnce",lienAnnonce)
+				embed , lienAnnonce = await asyncio.to_thread( run_blocking_function_sync_creationEmbed, annonce)
 
-			canal = mypackage.client.get_channel(channelid)
+				button = mypackage.createButton("Voir L'anonnce",lienAnnonce)
 
-			ancientLienAnnonce = lienAnnonce
+				canal = mypackage.client.get_channel(channelid)
 
-			if canal:				
-				# Envoyez le message dans le canal spécifiécanal 
-				messageLog = "envoyé du message pour le nouvel article dans le canal : {} lienAnnonce : {} Ancient Lien Annonce : {}".format(canal, lienAnnonce, ancientLienAnnonce)
+				precedantPrecedantLienAnnonce = precedantLienAnnonce
+				precedantLienAnnonce = lienAnnonce		
 
-				mypackage.log_threadAnnonce.info(messageLog)
-				
-				msg = asyncio.run_coroutine_threadsafe(envoyer(canal, embed, button ), mypackage.client.loop)
-				msg.result()			
-			else:
-				print("Canal non trouvé.")
+				if canal:				
+					# Envoyez le message dans le canal spécifiécanal 
+					messageLog = "envoyé du message pour le nouvel article dans le canal : {} lienAnnonce : {} Ancient Lien Annonce : {}".format(canal, lienAnnonce, precedantLienAnnonce)
+
+					mypackage.log_threadAnnonce.info(messageLog)
+					
+					msg = asyncio.run_coroutine_threadsafe(envoyer(canal, embed, button ), mypackage.client.loop)
+					msg.result()			
+				else:
+					print("Canal non trouvé.")
 			
 			
 
