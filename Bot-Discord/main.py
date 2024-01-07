@@ -49,6 +49,7 @@ async def addlink(ctx, *args):
         # Écriture du lien dans le fiche
         with open(mypackage.fileLink,'a') as file :
             file.write(str(channel_id) + mypackage.separateur + link + '\n')
+            file.close()
 
         await ctx.send("Le lien a bien était ajouter a la base")
 
