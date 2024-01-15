@@ -14,12 +14,16 @@ def chercherChaineDansFichier(nom_fichier, chaine_a_chercher,rechercheParChannel
     # Ouvrez le fichier en mode lecture
     with open(chemin_du_fichier, 'r') as fichier:
         lignes = fichier.readlines()  # Lire toutes les lignes du fichier
-
+      
     if rechercheParChannelid == False : 
+
+        print("GG BG")
         
         # Initialisation ficher json
         dataOut = '{"message":"" , "ChannelID":"" , "indexChaine":""}'
         dataOut = json.loads(dataOut)
+
+        dataOut["message"] = "Chaine non trouvée"
 
         # Parcourez chaque ligne pour rechercher la chaîne
         for numero_ligne, ligne in enumerate(lignes, start=1):
@@ -29,8 +33,7 @@ def chercherChaineDansFichier(nom_fichier, chaine_a_chercher,rechercheParChannel
             # print("chaine rechercher : " , chaine_recherchee.lower() ," de type : " , type(chaine_recherchee))
             # print("ligne comparé : " , ligne.split("§")[1].lower() ," de type : " , type(ligne.split("§")[1]))
             # (str(chaine_recherchee).lower() , str(ligne.split("§")[1]).lower())
-            
-            
+                
             if mypackage.comparaisonEntre2Chaine(str(chaine_recherchee) , str(ligne.split("§")[1])) :  
                 
                 dataOut["message"]   = "Chaine trouvée"
@@ -38,14 +41,15 @@ def chercherChaineDansFichier(nom_fichier, chaine_a_chercher,rechercheParChannel
                 dataOut["indexChaine"]     = (numero_ligne -1)
 
                 mypackage.log_chercherChaineDansFichier.info("nom ficher : {} , chaine a rechercher : {} , channeid {} : , le resulta {} ".format(nom_fichier , chaine_recherchee , ligne.split("§")[0] , dataOut))
+    
 
-                return dataOut
-    else:   
+    if rechercheParChannelid:   
 
          # Initialisation ficher json
         dataOut = '{"message":"" , "Chaine":"" , "indexChannelid":""}'
         dataOut = json.loads(dataOut)
-
+       
+        dataOut["message"] = "Chaine non trouvée"
 
         # Parcourez chaque ligne pour rechercher la chaîne
         for numero_ligne, ligne in enumerate(lignes, start=1):
@@ -65,7 +69,5 @@ def chercherChaineDansFichier(nom_fichier, chaine_a_chercher,rechercheParChannel
 
                 mypackage.log_chercherChaineDansFichier.info("nom ficher : {} , chaine a rechercher : {} , channeid {} : , le resulta {} ".format(nom_fichier , chaine_recherchee ,  str(ligne.split("§")[0]) , dataOut))
 
-                return dataOut
-    
-    
-    
+
+    return dataOut

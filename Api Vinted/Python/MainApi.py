@@ -32,7 +32,7 @@ def videCache(cheminTemp:str):
         
         myfonction.removeTemp(cheminTemp)
     
-        time.sleep(1/2)
+        time.sleep(1)
 
         myfonction.viderCorbeille()
 
@@ -41,6 +41,11 @@ videCacheThread = threading.Thread(target=videCache, args=(cheminTemp, ), name="
 videCacheThread.start()
 
 app = Flask(__name__)
+
+@app.before_request
+def before_request():
+    # Attendez 2 secondes avant de continuer
+    time.sleep(1)
 
 @app.route('/')
 def index():
