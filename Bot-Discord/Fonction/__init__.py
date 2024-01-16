@@ -1,10 +1,11 @@
 from .chercherChaineDansFichier import *
+from .ComparaisonEntre2Chaine import *
+from .lectureDeFicheParIndex import *
 from .RecuperationDonneApi import *
 from .CreationEmbed import *    
 from .CreateButton import *
 from .variable import *
-from .ComparaisonEntre2Chaine import *
-from .lectureDeFicheParIndex import *
+from .delete import *
 
 import discord
 from discord.ext import commands

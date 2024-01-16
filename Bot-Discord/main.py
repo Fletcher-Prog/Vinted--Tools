@@ -73,6 +73,17 @@ async def viewlink(ctx, *args):
 
     await ctx.send(result)
 
+@mypackage.client.command()
+async def delete(ctx, *args):
+
+    if mypackage.delete(mypackage.fileLink,args[0]) :
+        
+        await ctx.send("Le lien associe a bien était supprimer ")
+
+    else :
+        await ctx.send("le channel n'a aucun lien d'associer")
+
+
 # Executer des que le robots reçois !clear <nb msg sup>
 @mypackage.client.command()
 async def clear(ctx, *args):
