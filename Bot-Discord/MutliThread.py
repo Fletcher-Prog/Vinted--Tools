@@ -21,7 +21,7 @@ def multhread():
         if nblignes > 0 : 
             if nblignesPrecedant != nblignes :
                 # Parcour de tout les lignes du ficher de lien
-                for ligne in enumerate(lignes, start=0):
+                for ligne in enumerate(lignes, start=nblignesPrecedant):
                     
                     lien = ligne[1].split('§')[1]
                     channelid = int(ligne[1].split('§')[0])

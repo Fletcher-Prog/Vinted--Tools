@@ -6,3 +6,4 @@
 1192219520841031690§https://www.vinted.fr/catalog?search_text=hoddie%20Ralph%20laurent&price_from=3&currency=EUR&price_to=16.00&brand_ids[]=88&brand_ids[]=4273&brand_ids[]=430791&size_ids[]=208&order=newest_first
 1196170106422689812§https://www.vinted.fr/catalog?search_id=12822503938&catalog[]=34&brand_ids[]=53&price_from=4&currency=EUR&price_to=10&status_ids[]=2&status_ids[]=1&order=newest_first
 1196196383322030151§https://www.vinted.fr/catalog?catalog[]=76&size_ids[]=207&size_ids[]=208&brand_ids[]=53&order=newest_first&price_to=7.00&currency=EUR&price_from=3
+1196806109407740024§https://www.vinted.fr/catalog?catalog[]=76&size_ids[]=207&size_ids[]=208&order=newest_first&price_to=7.00&currency=EUR&price_from=3&brand_ids[]=304

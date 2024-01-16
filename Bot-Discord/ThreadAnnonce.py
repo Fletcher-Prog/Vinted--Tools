@@ -45,7 +45,7 @@ async def threadAnnonce(lienVinted,channelid):
 
 				if canal:				
 					# Envoyez le message dans le canal spécifiécanal 
-					messageLog = "envoyé du message pour le nouvel article dans le canal : {} lienAnnonce : {} Ancient Lien Annonce : {}".format(canal, lienAnnonce, precedantLienAnnonce)
+					messageLog = "envoyé du message pour le nouvel article dans le canal : {} lienAnnonce : {} ".format(canal, lienAnnonce)
 
 					mypackage.log_threadAnnonce.info(messageLog)
 					
