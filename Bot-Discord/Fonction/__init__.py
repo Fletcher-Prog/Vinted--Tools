@@ -22,6 +22,9 @@ separateur = '§'
 # nom ficher contenant le liens
 fileLink = 'links.txt'
 
+# Liste des 7 derniére annoncer publier
+vintedLinkPublish = []
+
 # gestion des ficher log
 import logging
 

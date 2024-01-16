@@ -1,10 +1,19 @@
+tets = ["Anas","Amine","Meriam"]
 
-fileLink = "links.txt"
+print ( tets)
 
-while True :
+tets.insert(0,"Nabila")
 
-    with open(fileLink,"r+") as ficher :
-        lignes = ficher.readlines()
+tets.pop()
 
-    print(lignes)
-    
+print(tets)
+
+tets.insert(0,"Bourse")
+
+tets.pop()
+
+print(tets)
+
+
+
+
