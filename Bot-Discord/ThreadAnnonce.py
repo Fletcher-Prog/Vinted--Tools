@@ -12,6 +12,7 @@ def run_blocking_function_sync_creationEmbed(annonce):
 
 async def threadAnnonce(lienVinted,channelid):
 
+	lienPublier = []
 
 
 	loop = asyncio.get_event_loop()
@@ -27,7 +28,7 @@ async def threadAnnonce(lienVinted,channelid):
 		# Vefrification de l'intégriter des donnée
 		if annonce["Error"] == "False" :
 
-			if lienAnnonce not in mypackage.vintedLinkPublish :
+			if lienAnnonce not in lienPublier :
 
 				embed , lienAnnonce = await asyncio.to_thread( run_blocking_function_sync_creationEmbed, annonce)
 
@@ -36,10 +37,10 @@ async def threadAnnonce(lienVinted,channelid):
 				canal = mypackage.client.get_channel(channelid)
 
 				# Ajoute du lien a la liste est suppresion du derniér lien pour avoir crée le décalage de 
-				mypackage.vintedLinkPublish.insert(0,lienAnnonce)
+				lienPublier.insert(0,lienAnnonce)
 
-				if len(mypackage.vintedLinkPublish) > 10 :
-					mypackage.vintedLinkPublish.pop()
+				if len(lienPublier) > 4 :
+					lienPublier.pop()
 
 				#print("lienAnnonce                    : " ,lienAnnonce)
 
