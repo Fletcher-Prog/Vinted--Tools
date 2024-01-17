@@ -39,7 +39,7 @@ async def threadAnnonce(lienVinted,channelid):
 				# Ajoute du lien a la liste est suppresion du derniér lien pour avoir crée le décalage de 
 				lienPublier.insert(0,lienAnnonce)
 
-				if len(lienPublier) > 4 :
+				if len(lienPublier) > 7 :
 					lienPublier.pop()
 
 				#print("lienAnnonce                    : " ,lienAnnonce)
