@@ -5,6 +5,19 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "com.botdiscord.Main"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "com.botdiscord.Main",
+            "projectName": "demo"
+        },
+        {
             "name": "Python : fichier actif",
             "type": "python",
             "request": "launch",
