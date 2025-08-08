@@ -1,0 +1,21 @@
+# Environment Configuration for Vinted Discord Bot
+# Copy this file to .env and fill in your values
+
+# Discord Bot Configuration
+DISCORD_BOT_TOKEN=your_discord_bot_token_here
+
+# Proxy Configuration
+PROXY_ENABLED=true
+PROXY_ROTATION_ENABLED=true
+
+# API Configuration
+VINTED_RATE_LIMIT_DELAY=1.0
+
+# Logging Configuration
+LOG_LEVEL=INFO
+
+# Optional: Database Configuration
+# DATABASE_PATH=data/bot_database.db
+
+# Optional: Custom Proxy List File
+# PROXY_LIST_FILE=config/proxy_list.txt

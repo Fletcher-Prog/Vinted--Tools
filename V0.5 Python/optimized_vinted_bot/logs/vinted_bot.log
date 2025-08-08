@@ -1,0 +1,61 @@
+2025-08-07 21:10:34 - logging_setup - [32mINFO[0m - Logging setup complete - Level: DEBUG, File: /home/fletcher/Documents/GitHub/Vinted--Tools/V0.5 Python/optimized_vinted_bot/logs/vinted_bot.log
+2025-08-07 21:10:34 - test_logger - [36mDEBUG[0m - Debug message
+2025-08-07 21:10:34 - test_logger - [32mINFO[0m - Info message
+2025-08-07 21:10:34 - test_logger - [33mWARNING[0m - Warning message
+2025-08-07 21:10:34 - test_logger - [31mERROR[0m - Error message
+2025-08-07 21:10:34 - database - [32mINFO[0m - Database initialized successfully
+2025-08-07 21:10:34 - database - [32mINFO[0m - Added search config for channel 12345
+2025-08-07 21:10:34 - database - [36mDEBUG[0m - Marked item 999999 as published to channel 12345
+2025-08-07 21:10:34 - proxy_manager - [32mINFO[0m - Added proxy: http://test1:8080
+2025-08-07 21:10:34 - proxy_manager - [32mINFO[0m - Added proxy: http://test2:8080
+2025-08-07 21:10:34 - vinted_api - [36mDEBUG[0m - Searching items with params: {'order': 'newest_first', 'currency': 'EUR', 'per_page': 5, 'page': 1, 'search_text': 'test', 'price_to': 50}
+2025-08-07 21:10:34 - vinted_api - [36mDEBUG[0m - Making request to https://www.vinted.com/api/v2/catalog/items (attempt 1/3)
+2025-08-07 21:10:34 - proxy_manager - [32mINFO[0m - Starting proxy health monitoring
+2025-08-07 21:10:34 - proxy_manager - [32mINFO[0m - Running health check on 2 proxies
+2025-08-07 21:10:34 - proxy_manager - [36mDEBUG[0m - Proxy http://test2:8080 health check failed: Cannot connect to host test2:8080 ssl:default [Name or service not known]
+2025-08-07 21:10:34 - proxy_manager - [36mDEBUG[0m - Proxy http://test1:8080 health check failed: Cannot connect to host test1:8080 ssl:default [Name or service not known]
+2025-08-07 21:10:34 - proxy_manager - [32mINFO[0m - Health check complete: 2/2 proxies healthy
+2025-08-07 21:10:34 - vinted_api - [33mWARNING[0m - HTTP 401 for https://www.vinted.com/api/v2/catalog/items
+2025-08-07 21:10:35 - vinted_api - [36mDEBUG[0m - Making request to https://www.vinted.com/api/v2/catalog/items (attempt 2/3)
+2025-08-07 21:10:35 - vinted_api - [33mWARNING[0m - HTTP 401 for https://www.vinted.com/api/v2/catalog/items
+2025-08-07 21:10:37 - vinted_api - [36mDEBUG[0m - Making request to https://www.vinted.com/api/v2/catalog/items (attempt 3/3)
+2025-08-07 21:10:37 - vinted_api - [33mWARNING[0m - HTTP 401 for https://www.vinted.com/api/v2/catalog/items
+2025-08-07 21:10:37 - vinted_api - [31mERROR[0m - All retry attempts failed for https://www.vinted.com/api/v2/catalog/items. Last error: None
+2025-08-07 21:10:56 - logging_setup - [32mINFO[0m - Logging setup complete - Level: DEBUG, File: /home/fletcher/Documents/GitHub/Vinted--Tools/V0.5 Python/optimized_vinted_bot/logs/vinted_bot.log
+2025-08-07 21:10:56 - test_logger - [36mDEBUG[0m - Debug message
+2025-08-07 21:10:56 - test_logger - [32mINFO[0m - Info message
+2025-08-07 21:10:56 - test_logger - [33mWARNING[0m - Warning message
+2025-08-07 21:10:56 - test_logger - [31mERROR[0m - Error message
+2025-08-07 21:10:56 - database - [32mINFO[0m - Database initialized successfully
+2025-08-07 21:10:56 - database - [32mINFO[0m - Added search config for channel 12345
+2025-08-07 21:10:56 - database - [36mDEBUG[0m - Marked item 999999 as published to channel 12345
+2025-08-07 21:10:56 - proxy_manager - [32mINFO[0m - Added proxy: http://test1:8080
+2025-08-07 21:10:56 - proxy_manager - [32mINFO[0m - Added proxy: http://test2:8080
+2025-08-07 21:10:56 - vinted_api - [36mDEBUG[0m - Searching items with params: {'order': 'newest_first', 'currency': 'EUR', 'per_page': 5, 'page': 1, 'search_text': 'test', 'price_to': 50}
+2025-08-07 21:10:56 - vinted_api - [36mDEBUG[0m - Making request to https://www.vinted.com/api/v2/catalog/items (attempt 1/3)
+2025-08-07 21:10:56 - proxy_manager - [32mINFO[0m - Starting proxy health monitoring
+2025-08-07 21:10:56 - proxy_manager - [32mINFO[0m - Running health check on 2 proxies
+2025-08-07 21:10:56 - proxy_manager - [36mDEBUG[0m - Proxy http://test2:8080 health check failed: Cannot connect to host test2:8080 ssl:default [Name or service not known]
+2025-08-07 21:10:56 - proxy_manager - [36mDEBUG[0m - Proxy http://test1:8080 health check failed: Cannot connect to host test1:8080 ssl:default [Name or service not known]
+2025-08-07 21:10:56 - proxy_manager - [32mINFO[0m - Health check complete: 2/2 proxies healthy
+2025-08-07 21:10:56 - vinted_api - [33mWARNING[0m - HTTP 401 for https://www.vinted.com/api/v2/catalog/items
+2025-08-07 21:10:57 - vinted_api - [36mDEBUG[0m - Making request to https://www.vinted.com/api/v2/catalog/items (attempt 2/3)
+2025-08-07 21:10:57 - vinted_api - [33mWARNING[0m - HTTP 401 for https://www.vinted.com/api/v2/catalog/items
+2025-08-07 21:10:59 - vinted_api - [36mDEBUG[0m - Making request to https://www.vinted.com/api/v2/catalog/items (attempt 3/3)
+2025-08-07 21:10:59 - vinted_api - [33mWARNING[0m - HTTP 401 for https://www.vinted.com/api/v2/catalog/items
+2025-08-07 21:10:59 - vinted_api - [31mERROR[0m - All retry attempts failed for https://www.vinted.com/api/v2/catalog/items. Last error: None
+2025-08-07 21:19:05 - utils.logging_setup - [32mINFO[0m - Logging setup complete - Level: INFO, File: /home/fletcher/Documents/GitHub/Vinted--Tools/V0.5 Python/optimized_vinted_bot/logs/vinted_bot.log
+2025-08-07 21:19:05 - __main__ - [32mINFO[0m - Starting Optimized Vinted Discord Bot v2.0
+2025-08-07 21:19:05 - utils.logging_setup - [32mINFO[0m - ==================================================
+2025-08-07 21:19:05 - utils.logging_setup - [32mINFO[0m - SYSTEM INFORMATION
+2025-08-07 21:19:05 - utils.logging_setup - [32mINFO[0m - ==================================================
+2025-08-07 21:19:05 - utils.logging_setup - [32mINFO[0m - Python Version: 3.12.3 (main, Jun 18 2025, 17:59:45) [GCC 13.3.0]
+2025-08-07 21:19:05 - utils.logging_setup - [32mINFO[0m - Platform: Linux-6.8.0-57-generic-x86_64-with-glibc2.39
+2025-08-07 21:19:05 - utils.logging_setup - [32mINFO[0m - Architecture: x86_64
+2025-08-07 21:19:05 - utils.logging_setup - [32mINFO[0m - Processor: x86_64
+2025-08-07 21:19:05 - utils.logging_setup - [32mINFO[0m - Total Memory: 13.6 GB
+2025-08-07 21:19:05 - utils.logging_setup - [32mINFO[0m - Available Memory: 7.8 GB
+2025-08-07 21:19:05 - utils.logging_setup - [32mINFO[0m - Disk Space: 400.0 GB free of 467.9 GB
+2025-08-07 21:19:05 - utils.logging_setup - [32mINFO[0m - ==================================================
+2025-08-07 21:19:05 - __main__ - [31mERROR[0m - Discord bot token is required! Set DISCORD_BOT_TOKEN environment variable.
+2025-08-07 21:19:05 - __main__ - [31mERROR[0m - Configuration validation failed!

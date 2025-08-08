@@ -1,0 +1,19 @@
+# Proxy List for Vinted Bot
+# Format: protocol://username:password@host:port
+# Or: host:port (for proxies without authentication)
+# 
+# Examples:
+# http://user123:pass456@proxy1.example.com:8080
+# https://user123:pass456@proxy2.example.com:3128
+# socks5://user123:pass456@proxy3.example.com:1080
+# 192.168.1.100:8080
+#
+# Lines starting with # are ignored
+# Empty lines are ignored
+#
+# Add your proxy servers below:
+
+# Example proxies (replace with your actual proxies)
+# http://username:password@proxy1.provider.com:8080
+# http://username:password@proxy2.provider.com:8081
+# http://username:password@proxy3.provider.com:8082
